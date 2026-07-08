@@ -1,0 +1,1334 @@
+主持人的角色
+那也是高招院長提到
+我們在意的是
+蔡愛時代
+我們在意是特資
+然後Yemi
+這是他第二階段
+就是說我們的整個觀念
+那第三段的話是
+最終回到我們國務
+那這次的話我們很榮幸邀請到四位
+分別來自日本、香港
+還有這個
+台灣的
+分享一下針對
+以下的領域就是我們想要談一下
+整個
+社會的這個韌性
+然後我們的產業安全
+然後我們的
+AI Security 最後是
+的觀察與
+協見解這樣子
+那第一位我們的Panel Day是
+Cytosan
+Cytosan, please use yourself
+日本語で進行
+英語で出てます
+大丈夫ですか
+OK
+日本のISPで
+政府來自身
+自由地缸
+社長
+Singapore
+政府orsk
+日本社交通的
+林姨
+日本語的意思
+GMO Cyber Securityの凛です
+よろしくお願い致応
+日本から来ました
+私は製品セキュリティを専門としてまして
+今は製品セキュリティを日本製造業の皆様に支援
+ご支援しています
+また宇宙のセキュリティを始めてまして
+今そこを推進しているというところと
+あと幸いにHitConの
+現在紹介 cellular news
+學習相對are萬戟的歷史
+and I do more on right now on AI webhunting software platform development
+before I do the APT and threat intelligence, malware analysis
+most likely to help a lot of NGOs in Hong Kong
+and to fight against the operator, the APT operator, the malware operator
+for me I'm doing the penetration test, red teaming
+and also the incident response for my own company
+for the community serving, I'm the Red Hat
+I work as a, not work, it's a volunteer work
+it's Red Hat, United States and Asia Review Board member
+and also the DevCon Singapore Review Board member
+so this is my geography
+and our last panelist is Robert
+Hello everyone, this is Robert
+and that's Robert from Cisco
+Cisco and Robert
+Good year
+Thank you
+I'm your host and I'm your host
+I'm your host
+I'm your host
+Thank you
+Okay, let's get started from the first theme
+Resilience
+So Cytosom from steering ICT ISAC and the Nippon C-Cert Association
+Fab actually breaks when an enterprise tries to build collective defense in-house
+and where does the information that should flow that stock
+我的問題是根据Cytosom他在ICT ISAC
+还有NCA的这个经验
+根据他的观察
+在这些新资的这些整并上
+如果企业自己要重新去实作的话
+有没有一些问题
+或是有没有一些经验可以分享
+一些
+まず闇曇り情報を集めようとするプロジェクトがたまに見られるんですけれども
+そういうのは失敗する可能性が高いです
+集めた情報をどのように分析し
+どういう行動につなげるのか定まっていないと失敗します
+業界団体でもたくさんの会員からメンバーから情報を集めて
+それを積算して綺麗なグラフを描けるんだけど
+役に立まないみたいなプロジェクトというのはいくつも見ておきます
+企業の中でも例えば侵入事件があって事案があって
+その対応のために情報共有するというのであれば
+すごくみんな真摯に真面目にやってくれるんですけど
+従来何があるか分からないから情報共有しましょうというと
+今それは真摯にちょっと待ってというような扱いを受けてしまうことが多いのではないと思います
+一旦ここで
+ここで
+I think we need to keep people in different technical skills
+especially on the research side
+for me I do the research and also the consulting work
+because I also write a paper to submit to those academic conferences
+and get some reviewers to review my work
+I believe those people should go through this process
+because right now we always depend on the product a lot
+we need to have a more solid technical mindset
+to try to practice to train our independent thinking
+how can we justify the product is good enough
+to make the scenario or make the solutions
+however right now we are too dependent on the product
+and because a lot of business wording
+and it's trend our thinking
+so how can we do it
+this is the talent
+the talent is how can we understand every piece of the technical foundation
+and try to make the justification
+this is I think is very important right now
+to be the talent
+not just I learnt I can code 10,009s
+not I can do a lot of certification
+even I call offensive security
+so okay
+this is not the destination
+we need to train the skills
+train our mindset
+apply our knowledge
+and get these good people to come to the field
+this is I call talent
+I see thank you
+so we believe the talent development takes time
+but today I want to deliver the message to our enemies that
+how can we implement or make immediate actions
+once the panel complete right
+so I was wondering for a Taiwanese enterprise
+that usually can build the whole system alone
+so any recommendation for example manage detection or intelligence sharing or anything from your experience from NCA
+you can recommend your ideas to our enemies
+まずいないというのもそうなんですけども
+すべての企業がセキュリティの技術や事案に対して詳しくなるというのは難しいと思いますので
+セキュリティサービスを受けてその日から専門の皆さんの知見で事案の発見ということにつなげることができるようなサービスを受けるというのが一つの方向性かと思います
+どういう事業者と付き合ったらいいかというのですけど
+二つありまして一つは
+セキュリティの専門家でも
+今事案に関して知らなくて
+後日分かったことを
+後日調べたいというようなことがあり得ますので
+記録ログをきちんと保存して
+後で調べるようなことができるような事業者というのを
+まず一つあるかなと思います
+あともう一つ
+今日はレジリエンスの観点から言うと
+侵入事件が起こった時に
+どういうことが起こったのかという調査と
+その事業の継続
+システムが侵害を受けているんだけど
+事業を継続しなければならない
+この二つがいつもトレードオープンになることが多いと思います
+ある日本で起こった事件では
+セキュリティの調査を優先したために
+復旧が2ヶ月遅れてしまったという事案もあります
+そういう意味ではよく相談して
+復旧と調査の両立ができるような事業者と
+申し上げてしまった
+中国人名其他专 대로  64一层高解
+我们换取将谈领统体。
+Österreich国公里集大体的观点。
+到達些數百曠一人零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零零
+email reputation is actually the country back to the community
+and so that's the community
+also for the collaboration
+and we collaborate with a lot of government agencies
+and law enforcement
+and national search
+and research institutions
+and also for education
+actually we have a lot of webinar and podcast
+and I'm not sure everybody heard about Cisco Network Academy
+which is a global
+worldforce development program
+and actually
+Talo is actually the experts
+Talo is actually helping design
+those cyber security forces
+and they are free
+so
+there are a lot of things we are contributing
+but I think in the back
+the technical side
+because the platform itself
+the intelligence platform requires a lot of skill
+to further scale capability
+to further scale capability
+actually we are integrating
+and also for me
+and by data platform
+so because it has
+a lot of good search monitoring
+that's the capability
+Thank you Robert
+and I'd like to move to the next thing
+Supply Chain Security
+so
+在台灣
+我2017年
+在全衛科技創立
+這個
+public security
+incent response
+tp3的時候
+我們開始意識到
+在整個
+公民安全
+還有產品安全方面
+會是一個
+新的戰場
+需要來做處理
+那當然
+各位有在關心新聞的話
+可能也知道
+到今年9月開始
+歐盟的這個
+Sandberg resilience
+and
+這個CIA
+也開始要進行
+那在過去的話
+如果一間組織
+對比差別的製造業
+有一個專屬的
+p3其實不錯的一個狀態
+但更多部分是沒有的
+好
+那我們定義這種情況
+其實是
+在起步
+就是傳統這個p3 1.0
+那定賞在這個
+Foreign of Incense Response
+Foreign of Incense Responding First
+裡面
+連續三連發表
+這個p3 2.0的一個
+研究跟觀察
+那雖然說是從日本製造業
+開始
+但其實逐步擴展到
+更大的一個研究範圍
+所以接下來的問題
+我們想要跟定賞
+還有就是
+其他的panels
+來討論一下
+針對
+公民安全
+那如果更經濟的事實在
+就是product security
+的話
+我們有沒有那些觀察人
+建議給台灣的聽眾
+這樣子
+好
+以上
+As a former head of
+panasonic PISA
+you have run
+PISA 1.0 model
+for a long time
+and
+I was wondering
+due to the CIA
+or NIS2 pressure
+how can PISA 1.0
+the teams
+have some difficulties
+or challenges
+you observe
+or any other
+recommendation
+or observation
+for this trend
+that's good
+thank you
+thank you
+thank you
+thank you
+thank you
+ah
+English
+ok
+so
+there are many
+manufactures
+in Japan
+not big corporation
+but also
+the small media enterprise
+and
+I believe that
+台灣 also have
+the very wonderful
+powerful
+manufactures
+like Japan
+and meanwhile
+they are asking
+to do the
+product security
+even though
+you don't have
+people
+you don't have
+professional for
+cyber security
+and you don't have
+budget
+and you don't have
+knowledge
+they are good at
+making the product
+but not good at
+product security
+or cybersecurity
+aspecting
+still
+the CRA
+you said
+the
+europe
+asking you
+to do that
+otherwise
+the penalty
+is gonna happen
+and also
+sometimes
+you cannot sell
+in europe
+which is a big
+corporate risk
+still
+ah
+we are trying
+to
+build the
+t
+aswell
+and
+sometimes
+the PSAN 1.0
+depends on
+people
+and
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+b
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+You are the Black Hat HR Group and you did some backdoor research in the past few years, right?
+Can you share your observations and your words to our attendees and say
+if the malware appears in the supply chain, any recommendations or how to do that?
+Okay, this is a really interesting topic, it's a backdoor application and also the supply chain attack
+Supply chain attack is not limited to the software, it's also including the hardware
+Okay, even the Panasonic or even the walk, some toilet or air conditioning, they get a backdoor or even get a supply chain
+Okay, so a few years ago in 2022, we published, actually I was in charge of a research about backdoor investigation
+One of our customers is an online gaming customer and there's an insider
+The insider is a group of the administrators, infrastructure administrators, okay, they work very closely with each other
+So we try to identify those backdoor applications in their server
+They put it up in the IIS server as a service
+And because they are already an insider, they can deploy the malicious service, the backdoor in the IIS web server, it's very easy
+So what is the problem?
+We need to check the binary integrity
+We need to execute the white list checking
+And also, one point is, if you still remember, half years ago, there's a problem of the Linux
+There's a supply chain problem of the program, of the binary
+We need to do some kind of side-channel monitoring
+Especially to make the benchmark of the normal traffic, normal request response
+So by that time, with my online gaming customers, we try to monitor the traffic, the server, the request and response
+Make a difference in different time zone, different time duration
+And check out what is any anomaly or abnormal behavior of the backdoor
+And by that time, we figure out, because there are a lot of servers in this crime
+So that's why we try to find out that backdoor
+And that we implement, like, different staging server, drum server, and even MFA for those administrators
+And they eliminate, they have no chance to work as an insider
+After one to two months, they will resign
+Because no profit, again, because we believe they are always hired by the competitor
+But we can't get them out, we can't report the police
+Because the administrator can destroy the system, can corrupt the database
+So we need to live with that attacker, okay, for one year, okay
+We need to keep smiling to the attacker, okay
+Other than that, we're back to the backdoor idea
+Right now, we've got CICD, the pipeline
+Most of the malicious code, maybe some kind of plan the code
+To maybe corrupt the pipeline, or maybe to try to replace or compromise the pipeline
+The integrity of the upload or the production of the binary or the program
+So, other than the deployment
+I think we also need to check out the programs that are deployed to the production
+Let's keep running, we need to monitor the side channel to charge again
+Because the program can be replaced anytime
+So, we need to ensure the integrity or the binary or the surface
+Should be the one we want, the one we is necessary to reach
+Otherwise, the supply chain program or band door will come back
+So, this is my point of view
+Thank you, and my next question is to Inza, right?
+You just mentioned that, thanks to Generative AI
+We've got tens of thousands of new vulnerability reporting
+And somehow, most of the P30 team have limited resources, right?
+So, what's our recommendation?
+For example, we should ask for turnkey services
+For example, we leverage external P30 experts who handle that thing
+Or, if we have sufficient human resources in-house
+Any way, for example, we can use AI to automate or accelerate our robot?
+Yes, I think finding the vulnerabilities is easy now
+Using the methods or whatever you call it
+The AI can find the vulnerabilities easily
+The problem here is how to fix
+They are hard to fix
+And also hard to coordinate
+Or hard to triage
+Or hard to ensure response
+So, using the AI is going to be the key as a tool
+And so, findability is one of the solutions
+But defending offensive is okay
+But defending also needs to be using the AI
+So, what I'm recommending is using AI to do the ensure response activity
+For example, monitoring
+Monitoring is one of the piece of activities
+But you can use AI to let the agent
+To monitor the outsource of the information automatically
+And just let them do
+And after that, maybe if you have time
+Then maybe you can use the triage
+Using the AI agent
+Using CVSS or EPSS
+Or whatever you just put into all data
+And put into your manufacturing information
+And all the information inside
+They can triage
+To help to judge
+Somehow
+And of course
+We have two human in the room
+You cannot believe all the results
+So, you need to check point
+That you
+The human
+The professional
+To check
+Is this okay or not
+Something like that
+And the coordination
+Coordination
+It's hard to use AI
+But still can use AI
+But the coordination
+Is between the people and people
+Like supply chain
+Tier 1, Tier 2, Tier 3
+All involved
+So you cannot use AI
+To do everything
+Done
+I think that is
+The need to be human
+But still
+AI can support
+So I think
+PISA 2.0
+Is technically
+Based on the AI agent
+To do that
+It helps
+What the manufacturers
+Are going well
+Thank you
+And you just mentioned
+That the coordination
+Is hard
+And we may need
+Some resources
+And some
+Heuristics
+Out there
+So
+Seto-san
+Based on your
+Experience
+At NCA
+What's your observation
+About multi-party coordination
+About
+About
+About
+About
+I'm sorry
+I'm sorry
+I'm sorry
+I'm sorry
+I'm sorry
+I'm sorry
+I'm sorry
+Moved
+That is
+I
+Not
+For
+To
+What is
+所以,必須人間的適用,必須人間的判断,必須必須的作用,必須的作用,必須的作用,必須的作用,必須的作用,
+同じパッチを当てる前と同じ処理をさせても負荷が高くなったり、メモリがたくさん必要になっておこう。なので、システムの増強をしなければいけない。
+そういうような影響が出てきますので、今自分が運用している重要インプラのサービスに、事業に最終的にはどういう影響があるのかということを判断しないと、
+セキュリティーのためとはいえ、自動的アテリティーとはできないかなと思います。
+Thank you 先生。
+and I'm moving to the next thing for today.
+我們在講AI security,但是有時候要講究一點是AI for security 還是AI的 security
+那今天我們想要比較聚焦战的是說
+Persume Attainer AI
+就是現在從攻擊的角度使用AI
+例如說我前陣子大家聽到的這個Methos
+類似這些前沿的大語言模型
+開始能夠有效的自己去想辦法把問題找出來的這件事情
+那它會是一個壓力比較大的狀況
+那接下來的問題我會開始來看看有沒有一些方法
+或是有些觀察這樣子
+I just mentioned that we try to assume attacker AI
+for the current situation, right?
+So from the offensive seat, reverse engineering,
+exploit environment, and as the webcam review board
+Where is AI given attackers up leave right now?
+And where is it still oversold?
+Yeah, actually right now because we have been
+I'm one of the track of the exploit and corporate analysis track
+In the United States and Asia we have bought
+We have read a lot of our submissions
+We have found that, okay, I can make a summary
+A lot of submitters, they try to apply the AI
+And try to hunt the bugs in hardware, I mean in hardware firmware
+And also in some kinds of Linux or servers
+They try to apply everything
+But the problem is they just say
+We have tuned the model
+We have added a particular data set
+It looks like they are very rich
+Because you don't use the AI
+You need to earn the token, the cost, okay?
+Anyone use their AI to 100 bucks here?
+I get a bounty, I do it
+But how much I get it?
+500 US dollars
+But I need to spend 100 or 200 US dollars
+To buy the tokens
+And a lot of big tech firms
+They have a commercial research team
+They also try to compete with each other
+To use their AI
+And then try to hunt a lot of
+To find a lot of vulnerabilities
+The problem is that
+It's not just
+在國與錯,不是防廢
+They found out AI
+毛型造防廢
+You really have a lot of money to do
+This is not possible
+OK
+So that's why we need a scope
+To level the scope
+We need to have a final approach
+For us, we have also developed a platform
+To have a final approach
+To try to eliminate the low-hanging fruit
+Low-hanging fruit vulnerabilities
+And including more skills
+More connection
+More expertise knowledge
+And including research paper
+Including the exploit code
+And try to identify the chained exploit code
+However from the review of the submissions
+It looks like
+They just give me an impression
+And they have a trained model
+But they have not a systematic pipeline
+To do it
+However in the academic approach
+A lot of using the pipeline
+Is very like
+Use the S-A-S-T, A-S-T
+And then try to use the skills
+The rules, the skills
+And try to level down
+The water break
+So that's why
+When you go to the X or Twitter
+There's a lot of water break is found
+By the Google Project Zero
+So a lot of water break is found
+Because they apply the AI properly
+Okay
+They are not just
+Okay I put in the PoE
+Put on the chat room
+On the AI
+And find the bugs
+It is no longer this time
+However then
+For the submission
+They are still allowed to lie
+Two simple simplistic submissions
+So we are looking for more sophisticated
+How to apply AI to 100 bugs
+Instead of just
+Okay I'm rich
+So pull the code
+Pull the boundaries
+We get a bug
+We get a bug
+Though it's not working
+And this is why
+We reject a lot of AI related
+Hunting research
+So if you want to submit it
+Just come to me
+I give you some hints
+Alright
+Thank you Anthony
+I would like to ask some
+Summimitation for your share
+So fortunately the AI things are not massively deployed today
+Right
+So what's your point for the agentic way
+Or the proper way we can do the defense
+Or the implementation for this kind of AI security
+Right now then also we have seen other sorts of people who do research
+Use the agentic like MCPY to help to speak out the expertise
+I mean the skills
+Or maybe one agent A responsible for particular vulnerabilities
+So agent B responsible for other maybe hip overflow or other vulnerabilities
+So it's like a separation of duties
+Separation of the workers
+Such that we can tune the benchmarking how the performance is better
+Right now there's
+Everything is put all in all in one
+打包了
+So why die
+打包
+一起來
+So it's like
+Actually we need to split out everything
+And tune the particular vulnerabilities
+And find out the problem
+And after that in the defense side
+How can we mitigate it
+We need to do the same thing
+We don't do it like all in one
+Have a side channel analysis
+We need to separate everything
+Different attacks
+Different vulnerabilities
+And train
+How can we detect the public
+But this is very resources intensive
+But this is the only way
+Human in the loop
+And also expertise from the lab
+And the infrastructure
+To put together
+And make the applied AI properly
+To hunt more sensible bugs
+And to fix the bugs
+Otherwise
+We have
+We have
+This is a wasting
+Between the 100 bugs
+And the fixed bugs
+We got a lot of bugs
+But we didn't have time
+To fix the bugs
+Or the bugs got false negative
+And false positive
+Then
+A lot of enterprise suffering
+So this is how can we co-work together
+This is what I'm thinking
+After we win submissions
+Combine my research ideas as well
+Thank you
+Robert I was wondering
+From the Cisco perspective
+Any way or thoughts about the
+And how the defense has failed
+Yeah thank you for the question
+Actually I will start with the
+Actually you know
+The world of cyber security
+Has changed dramatically
+Because of AI
+And earlier a lot of people
+Talk about the
+You know
+The last thing
+Actually Cisco is one of the earliest
+Member of that project
+So let me start with the
+It's not just working with cloud
+But other frontier models
+Companies such as open air as well
+So we have a lot of close relationship with them
+So that's one
+And also
+Two years ago
+Two or three years ago
+Actually Cisco acquired a company
+Combine called Obasan Technologies
+It's a group of professors, students
+They based off Harvard University
+Actually they are very very passionate about AI security
+And they have very innovative ideas
+And how to come up with a suggestion on the framework
+Security framework
+So actually they are the ones that actually help
+The like OOPS LN top 10
+And Mindout Atlas
+And this AI
+You know those frameworks
+Security frameworks
+They are helping you know
+For the good framework
+And so they say
+Okay
+Let's put down some
+Thought together
+And see if there is any solution
+That can really help our customers
+So
+They come up with a
+The protocol actually called AI defense
+They look at it from three different lenses
+The first one is
+If you want to defend
+You have to know where
+You know
+The assets
+You're the AI assets
+So actually scan your environment
+The environment knows that
+You have an application
+And model
+And a library
+And the second one is
+Actually do the detection
+This is where we use a lot of
+Mythic AI rating technology
+To test
+And test
+Those libraries and models
+And then
+We understand that
+Okay
+If you have the detection
+You have the discovery detection
+You actually need the long time protection
+Force
+So we have LN guardrail
+So
+You know
+For example
+Like the
+Chrome injection
+And also
+The data leaking
+We can prevent that
+Okay
+So
+But now things change so fast
+That
+Now we're talking about
+Agenting AI
+It's not just LN
+It's just not a model file
+Anymore
+And earlier
+I looked at some of those speakers
+And mentioned about
+OpenClock
+OpenClock
+Gen7 media
+For the next chapter in ET
+Or
+Operning system
+Or personal AI
+Right
+It's huge
+You can do all those things
+Very fast and easy
+But what's the problem
+The security is really a concern
+And that's
+The reason why
+We actually we have
+A open source project
+We call it
+Defense Hub
+Actually we're collaborating
+WithNBA
+NBA
+NBA has the open shell technology
+The sandbox technology
+On top of that
+Actually
+We are contributing
+Our open source scanners
+So
+It
+You know
+NCP scanners
+Scale scanner
+Agent to agent scanners
+We contribute all that
+And
+We put our observability
+The visibility
+Stack
+Like swarm integration
+Into
+It
+So
+Hopefully
+Through this
+We can have a very
+Very
+I don't want to say
+Complete
+But comprehensive coverage
+On the
+G&I
+Secure
+Thank you
+Rombert
+And
+I'm moving to
+The last thing
+For today
+早上
+就是
+主任長剛剛提到
+第一步是
+G&I
+跟這個
+研瓶密密碼
+那第二步的話
+是在
+現在的G&I
+是在
+公益力安全
+一樣是
+需要過好的
+一個基礎建設
+第三步的話
+我們會進入到
+整個關鍵基礎設施的
+一個防護狀態
+那
+我們就來看看
+就是在
+這些專家眼中
+這個
+Critical Infrastructure
+怎麼樣去
+看待這件事情
+然後
+因為抓重點打的話
+一定也是從
+從國家安全的角度
+當然也是從
+Infrastructure
+先開始打
+那
+我們就先抓重點
+來看
+Critical Infrastructure
+的情況下
+會做哪些事情
+Rombert
+Thank you for
+your sharing
+We just mentioned that
+There's a lot of
+agetic stuff
+is happening
+And
+From the
+Ascent
+Taiwanese
+Critical Infrastructure
+Operator
+So
+Any
+Gap
+You
+Observed
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Taiwanese
+Thank you
+I think the challenge
+and the gap is not like
+We
+Don't have tools
+Actually the problems
+We have too many tools
+But
+the problems
+Actually those tools
+Are
+In a very
+You know
+Every tool is looking at
+It's own domain
+Okay
+So
+That's
+The biggest problem
+And actually the gap
+Actually is
+Between the domain
+On the boundaries
+Between those domains
+Let me give you an example
+If
+The networking team
+Right
+They're using their own
+Networking
+Tools
+And
+They see some
+Problem
+On the traffic pattern
+Okay
+Okay
+They feel
+Okay
+Something is going on
+And the security team
+Actually is using
+Their security tool
+To see some
+Suspicious activity
+At the end point
+On the other side
+The structure
+The computing team
+Actually sees some CPU
+GPU
+HIGHTS
+Okay
+Individually
+Those may not seem to be
+A big of a deal
+But
+Actually they could
+Actually
+If we done the
+Trober correlation
+Actually they could think
+They made a very early
+Stage
+Of the compromise
+So this is the problem
+That
+We actually
+We have too many tools
+And we need to make sure
+That they can actually
+Work together
+Correlate together
+That's very very important
+Thank you
+Okay
+Thank you
+So
+Linsan
+We know OT and IoT
+Is part of
+Critical infrastructure
+Right
+So
+Yes
+So from the
+Pisa perspective
+Any recommendations
+Or
+For example
+We should start
+From visibility stuff
+Yeah
+Okay
+So infrastructure
+They're using many
+Ot
+IoT
+And why
+Attackers
+Trying to
+Compromise
+The infrastructure
+Because easy to
+Attack
+Because
+IoT
+Itself is vulnerable
+And why vulnerable
+Because they don't think
+Too much about
+Cyber security
+So
+That's why
+I think
+You need to
+Taking care
+Of the OT
+Or IoT
+Itself
+To harden
+Then
+Using
+All the IT
+Security
+And can be
+Safe
+And can be
+Safe
+The thing is
+You know
+The culture thing
+The manufacturer
+If the owner
+For example
+The power
+Pan
+Oner
+Asking you
+To do the
+Cyber security
+Activity
+In your
+IoT or OT
+Devices
+They're going to do it
+But if you don't ask
+They're not going to do it
+So
+But if you ask
+To do that
+You need to pay more
+Extra money
+But if you don't pay
+They're going to leave it
+They're going to leave it
+And that's the problem
+What happened
+And all the supply chain
+You know
+One company
+One infrastructure
+There are many entities
+Or companies
+Or IoT
+Ot devices
+From the global
+And some
+Are not doing well
+And everything's crap
+So I think
+This is a very big program
+For the infrastructure
+But the bad guy
+Knows that
+That's why
+They're going to attack
+For that
+But
+What we have to solve
+Is
+Well
+Maybe
+You need to take care of
+More supply chains
+You
+You know
+If you can give them
+More
+Good
+Best practice
+To the tier 3
+Or tier 4
+IoT
+Companies
+Which
+Is good
+Or if you have
+The good tools
+That you can share
+With those people
+I think
+It's going to be
+Good things
+And also maybe
+The training for the
+People
+Talented
+They don't have power
+But if you have
+The good solution
+Then just give to them
+And to do
+To make the ecosystem
+Which
+Is the best way
+I think
+Yeah
+I think so
+And
+From the
+NCA perspective
+How to respond
+When
+We don't
+Infrostruch
+And the tech
+Or
+We have to
+Collaborate something
+To do
+That
+Security
+事業
+の立場
+から言うと
+事案を見つけた時には
+その進行を止めるために
+通信を止めるというようなこと
+もしくはその他のシステムに影響しないように
+通信を止めていくということが
+必要だと思います
+その需要インフラ保護の観点や
+複数の顧客を抱えている場合には
+その止めた通信に関して
+他のお客様、ないしは他の事業者でも
+止める必要があるかどうかということで
+コミュニケーションを
+情報を渡して一緒に対応していくということが必要かと思います
+日本は来年に向けて
+いろんな
+ドメイン
+その需要インフラのドメインごとでの
+情報共有だったものを
+今国家一つの情報共有に
+まとめようとしていますけども
+台湾では恐らく日本よりは少し進んでいく
+かと思いますので
+そうした場で
+こういう悪いことが起こったよ
+こうやって止めたよという情報を
+になるのではないかと思います
+OK
+We covered most of the topics today
+and
+I'd like to ask every panelist
+to
+make a quick
+summary
+for today
+and
+Saiyo-san
+Any
+recomendation
+to our attendees
+that
+in
+the
+generative
+no
+But
+を
+もう
+いや
+けど
+请不吝点赞 请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+打赏支持明镜与点点栏目
+打赏支持明镜与点点栏目
+打赏支持明镜与点了点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+打赏支持明镜与点栏目
+那么 你是实际上下说这 раздел就行了
+这个です真是真� niez真好的
+很败的也Funomi说
+注到你便耶
+你 1300知道你支持不
+你们看不定
+这地方也能够 cardi acept
+你需要锁念取出的
+为了什么
+不 laws
+amenteThank you
+你 rectangular不会想做你的
+因为你不时看
+如果您会过很多 strongly signs的
+反正反正然后你会出现
+力量的关系
+这就是公联局的问题
+掉下来
+这是非常弱的 problema
+但马上速蒸生
+Rogue Unternehmen
+你就不信不信
+élect怪你
+而最 würde意xico
+这就是很忠门的影响
+即使推并了
+很严述
+nostalgia
+你必须要不信 busy
+在听个 nun的读 saben
+expl制成绩
+employee的状态
+大家 comport用息
+arenfleek
+你就是
+帮助
+而不是
+好的
+OK
+OK
+Let's say in the morning you go to the office
+and you find out something bad happened
+and you found out that your computer environment device being impacted
+then your networking device also being impacted
+as well as your security device or firewall
+you know have some problems
+Think about
+would you be able to get one consolidated report on what's going on
+or in the end you just get three different unrelated tickets
+which one do we prefer
+it takes a good common thing of platform behind it to do it
+it take a unified command center
+what I am saying command center
+it is how do you adapt the opportunity to respond
+so it takes a lot of time
+think about how to improve on that
+thank you
+thank you
+we can open one question
+anyone
+please
+gove to the
+brodof
+if no
+let's say to our panelists today
+and please enjoy your
+watch
+which it's like
+weddings
+gove to my
+ah
+how
+goo
+yeah
+po
