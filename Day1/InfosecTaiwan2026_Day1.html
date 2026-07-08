@@ -189,14 +189,22 @@
         .data-item .value { display: block; font-size: 20px; font-weight: bold; color: var(--primary-color); }
         .data-item .label { font-size: 11px; color: #666666; margin-top: 2px; }
         .data-note { font-size: 12px; line-height: 1.5; color: #555555; margin: 0; }
-        .mermaid-container { background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 24px; margin: 32px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; justify-content: center; }
+        .mermaid-container { background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 24px; margin: 32px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; justify-content: center; cursor: zoom-in; position: relative; }
         .mermaid-container pre.mermaid { background: transparent; border: none; margin: 0; width: 100%; }
+        .mermaid-container::after {
+            content: "🔍 點擊放大";
+            position: absolute; bottom: 8px; right: 12px;
+            font-size: 11px; color: #999; background: rgba(255,255,255,0.85);
+            padding: 2px 8px; border-radius: 10px; pointer-events: none;
+        }
 
         /* Lightbox */
         figure.section-figure img { cursor: zoom-in; }
         .lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(26,26,26,0.88); align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
         .lightbox.is-open { display: flex; }
-        .lightbox img { max-width: 96vw; max-height: 92vh; width: auto; height: auto; border-radius: 8px; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
+        .lightbox-inner { display: flex; align-items: center; justify-content: center; width: 96vw; height: 92vh; }
+        .lightbox-inner img { max-width: 96vw; max-height: 92vh; width: auto; height: auto; border-radius: 8px; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
+        .lightbox-inner svg { width: 90vw; height: auto; max-width: 1100px; max-height: 85vh; background: #ffffff; border-radius: 8px; box-shadow: 0 12px 48px rgba(0,0,0,0.4); padding: 32px; box-sizing: border-box; }
         .lightbox .lightbox-hint { position: absolute; top: 20px; right: 24px; color: rgba(255,255,255,0.75); font-size: 14px; }
 
         @media (min-width: 641px) { .mobile-only { display: none !important; } }
@@ -663,22 +671,46 @@
 
     <div class="lightbox" id="lightbox">
         <span class="lightbox-hint">點擊或按 Esc 關閉</span>
-        <img src="" alt="">
+        <div class="lightbox-inner" id="lightbox-inner"></div>
     </div>
 
     <script>
         (function(){
             var lightbox = document.getElementById("lightbox");
-            var lightboxImg = lightbox.querySelector("img");
-            function openLightbox(img){
-                lightboxImg.src = img.currentSrc || img.src;
-                lightboxImg.alt = img.alt;
+            var inner = document.getElementById("lightbox-inner");
+
+            function openLightboxImg(img){
+                inner.innerHTML = "";
+                var clone = document.createElement("img");
+                clone.src = img.currentSrc || img.src;
+                clone.alt = img.alt;
+                inner.appendChild(clone);
                 lightbox.classList.add("is-open");
             }
-            function closeLightbox(){ lightbox.classList.remove("is-open"); lightboxImg.src = ""; }
+
+            function openLightboxSvg(svg){
+                inner.innerHTML = "";
+                var clone = svg.cloneNode(true);
+                clone.removeAttribute("width");
+                clone.removeAttribute("height");
+                clone.removeAttribute("style");
+                inner.appendChild(clone);
+                lightbox.classList.add("is-open");
+            }
+
+            function closeLightbox(){ lightbox.classList.remove("is-open"); inner.innerHTML = ""; }
+
             document.querySelectorAll("figure.section-figure img").forEach(function(img){
-                img.addEventListener("click", function(){ openLightbox(img); });
+                img.addEventListener("click", function(){ openLightboxImg(img); });
             });
+
+            document.querySelectorAll(".mermaid-container").forEach(function(container){
+                container.addEventListener("click", function(){
+                    var svg = container.querySelector("svg");
+                    if (svg) openLightboxSvg(svg);
+                });
+            });
+
             lightbox.addEventListener("click", closeLightbox);
             document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeLightbox(); });
         })();
