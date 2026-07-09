@@ -1,0 +1,1894 @@
+我不是吃客
+你CIP號碼
+裡面應該都是超過三、四萬
+五、九萬
+我們他九倍
+我們是CIP號碼
+你出了什麼
+你怎麼這麼好
+我哪會
+我有CIP號碼
+有CIP號碼
+我只會CIP
+我不會CIP號碼
+沒有
+你每次都記錯我
+每次都要送我CIP號碼
+我只有CIP號碼
+每次都要我CIP號碼
+你不要這樣
+我只能給他
+我只能跟你說OTP
+我下次刻一個CCIE的OTP給你
+你要的時候就自己拿
+哈哈哈哈
+好,來
+大家早安
+歡迎大家來參加我們這個ISCII台北分會的那個分場
+那我先自我介紹一下畢竟棠
+我是林森達任維
+那ISCII的理事長
+那今天我們開心邀請到我們的那個ISCII的理事林家瑋
+那瑞琳
+那幫我們去介紹這一場這個DDS自由爆流量
+從OSI系統拆解AWSDDS的防護
+那我們的瑞琳他在這個領域是
+他是AWS系統的專家
+那他本身是那個全球首批的AWSHERO
+而且同時也是大眾化區的第一位
+然後還有很多很多的好險
+我剛剛在看手機
+努力記起來
+等一下我年紀有點大
+那邊記不住
+我就把時間交給他
+那熱烈的掌聲歡迎Noren
+好OK謝謝我們那個理事長的介紹
+然後各位的
+對於今天早上的議程有興趣的客戶
+我歡迎大家早安
+好
+好
+就是我們的場就是要比足一層多
+這就是我們今年的暫定的目標
+好那看起來應該有了
+好那今天分享的議題是講那個DDOS
+那因為昨天有朋友說
+他想要來聽我講
+然後我說我會講到AWS
+然後他說我對AWS沒興趣
+我說沒關係
+因為我二十分鐘不是講AWS
+二十分鐘在講DDoS
+所以他就來了
+他就來了
+OK
+好那我今天代表在IC2台北的一個分享
+好那其實我也在很多的國際組織跟社群
+好那在座應該有很多東西
+好那我就先快速的多次我介紹
+因為今天時間比較緊
+所以我就不花太多時間介紹了
+好那我大概在團體才在做二十年以上
+時間然後著重的領域
+就四大領域
+從資訊安全到雲端到AI到專案管理
+好那因為我自己本身在八年前又開始做AI
+所以當時開始去學微軟的AI
+然後取了一個微軟AI專家以後
+然後再來這幾年拿了A到S的AI專家
+跟雲端安全聯盟的AI專家
+那其他比如說我也有取得像CISSP
+那在座也有很多CISSP
+目前全球資安界的黃金正照
+我都說他的資安界的PMP
+好但是數量還沒有PMP多
+還有五倍
+對好那我目前在兩間公司任職
+分別做資安長跟數位長
+然後另外也有在一些培訓單位受課
+譬如說也許有我的PMP的學員
+還有A到S的學員
+那以及我有教授IRC2的證照
+但是我目前比較少教
+好因為我最崇拜的人都在教IRC2的證照
+所以我要去聽他們的課
+我們要講
+好那其他部分我在一些國際組織
+就是有任何職位
+包括像IRC2台北
+DMI台灣跟TWCSA
+就是今天一起主辦這個Infosec的單位
+然後以及我自己有成立一些社群
+好那其他就請參閱
+OK那我們就直接進入今天的主題
+好那我們今天主題講的是DDOS
+但是其實我們不能只知道DDOS
+DDOS叫做分散式阻斷攻擊
+所以他的多一個D
+多一個D代表他是分散式
+他是從很多的地方很多的IP
+他是分散的攻擊
+那我們在講DDOS之前要先講DOS
+他叫阻斷服務
+只要能夠讓你們的服務中斷
+都叫DOS
+都叫阻斷服務
+所以在講DDOS之前
+我要先講什麼叫阻斷服務
+好那我舉幾個比較舊的攻擊案例
+好那不知道大家有沒有聽過碎片攻擊
+我們今天在做網路傳輸的時候
+譬如說傳輸檔案
+譬如傳一個1TB的檔案
+你不可能是整個1TB直接傳
+他一定要把它切成很多段
+切成很多段以後
+對方收到你的這一個很多段的小檔案
+他要把它組合成一個
+他才能用
+那所謂的碎片攻擊是指說
+我今天在丟很多段的碎片的時候
+他要重組要告訴你的順序
+就是他現在是第幾號到第幾號
+然後下一個是第幾號到第幾號
+然後他才能重組成一個完整的1TB的檔案
+可是如果是一個惡意攻擊者
+他可能不是給你一個正常的順序
+好這邊舉一個例
+假設有三個碎片
+一二三
+一二三三個碎片
+他會告訴你說
+我這個碎片
+他的offset是多少
+offset是多少
+offset是多少
+我這樣才知道說他要怎麼組
+但是他第三個碎片
+你會發現說
+他跟前面一個碎片的範圍有重疊
+因為他是100
+零等可能是0到100
+但是第三個碎片
+他是從80開始
+那是跟前面的0到100
+他可能有重疊
+那重疊的時候他重組就會失敗
+就會出錯
+甚至說我今天丟了很多碎片給你啊
+然後我沒有
+就是我可能只丟一半
+那你就一直等
+一直等我丟
+那這個時候你就會消耗一些資源
+一直在等
+所以這個叫碎片攻擊
+這個攻擊也蠻久了
+基本上現在很多的作業系統都已經修復這個問題了
+但是他還是有機會發生
+尤其是在一些舊的系統
+那比較常見的攻擊名稱叫類組攻擊
+再來第二個DOS
+也是比較屌的
+他叫死亡之PIN
+那如果有唸過現在的PM
+就覺得我在講現在的PM
+什麼叫死亡之PIN
+一般來說我們會
+要測網路有沒有通
+我是在PIN一下
+一個8.8.8.8
+他如果PIN通
+他會回放我資料
+就在網路
+他基本上
+他有一個風包上限
+大小上限就是64K
+如果我們現在PIN的時候
+PIN他的這個大小
+因為PIN他
+他其實還是可以去做切
+切這個碎片切分段
+最後他接收以後把它組合起來
+是超過64K
+超過他的這個上限的話
+他可能也會有問題
+就會出錯
+舊的系統他可能會當機
+所以這個讓他當機
+不能提供我們網站服務
+這都叫DOS
+那我們今天主軸是要講的是什麼
+分三的阻斷攻擊
+相關的DDoS攻擊
+那我們就會從OSI7層
+來去看所謂的DDoS攻擊
+有哪些常見的
+那我們知道這些常見的攻擊以後
+我們就會發現說其實DDoS攻擊很難防禦
+甚至是無法防禦
+最後的解決措施
+要嘛就是找ISP業者
+比如說中華電力這種去洗流量
+要嘛就是緩解
+所謂緩解就是他沒有辦法百分之百防禦
+他只能降低衝擊這種感覺
+如果有認真研究DDoS
+你會有這種感覺
+好那我們來看一下
+這邊除了DDoS
+其實還有摻雜一些DOS
+就是他不一定是大流量
+他可能也不一定是分散式的
+好那我就會綜合去講解
+那OSI7層在座的各位應該有
+大部分都知道
+如果不知道的我也沒有辦法現場教學
+因為他這個算是網路蠻基本的
+所以我們從第一層
+好這個實體層
+然後第二層資料鏈結
+第三層網路層
+第四層傳輸層
+第五層
+繪畫層
+Session
+第六層呈現層
+第七層
+Application
+應用層
+這七層裡面只有四層會發生DDoS跟POS的攻擊
+只有四層
+就是用邊標的這個
+比較偏白色的
+右邊講的這些攻擊我都會講
+好結果等下短短的20分鐘
+我會把這些攻擊都講完
+好那我們DDoS攻擊
+它的第一個D
+第一個D
+叫分散式
+所以它也是阻斷
+好它也是阻斷
+只是它透過分散式的大流量
+來讓你的服務被塞滿
+那塞滿什麼
+塞滿你的網路頻關
+塞滿你的CPU負載
+塞滿你的記憶體
+塞滿你的連線數
+這個都叫DDoS攻擊
+好那
+因為我要講DDoS攻擊
+那還是要講一個實際案例
+就是我真實有發生了
+好那因為我自己有一個公司官網
+公司官網裡面都會有那個留言板
+就大家可以去提問
+或者是跟我聯繫
+然後我用的是那個
+免費的人家的留言板的套件
+然後它是有每個月的免費發送留言的次數
+然後就有了很瞎
+它就用不知道什麼機器人
+去我那個留言板
+可能Key了很多惡意指令
+然後一直Key一直Key一直發送
+所以我就在5分鐘內
+瞬間收到200多封的E-mail
+因為它留言我就會刷E-mail
+所以你看
+我這邊沒有列時間
+這邊只有列日期
+基本上這個就是幾分鐘就發了幾百攻
+然後DDoS攻擊
+最後我這個留言板超過留言上線
+我就不能收
+不能收E-mail了
+所以假設這一個月有人又要發這個留言
+來跟我聯繫
+我就收不到
+因為打到上線了
+好那當時我的官網
+我繼續看它的一個CPU的負載
+這個不是CPU
+這個應該是網路流量
+網路流量的負載
+在某一個時間點瞬間變高
+然後很剛好我大概這兩個月
+我就遇到四次
+兩個月就被攻擊四次
+一樣的手法
+不過它IP都封鎖
+還是一樣
+它還是可以透過Pitcher IP來攻擊
+好那剛好都是我的晚上下半時間
+然後我一看到被攻擊了
+趕快開電腦去把它封鎖掉
+好那再來
+因為我在檢查這個DLOG工期的時候
+有一些資訊可以看
+所以我在ALS上有建了一個Dashboard
+譬如說也許大家有的是第一次看到
+類似的Dashboard
+我會去收集它的LOG去統計說
+哪一個IP
+它在這段時間請求了多少次
+理論上我這個叫官網
+官網一個月沒有幾個人去看
+但是你在幾個小時之內
+你可以發送幾千個請求
+跟幾萬個請求
+看起來就很奇怪
+雖然它不一定被封鎖
+但是就很怪
+好再來
+我去看了一下
+有一些是台灣來的請求
+有些是來自於美國的
+我的網站是中文的
+為什麼會有美國人來看
+應該不太會有
+那再來我看到我的CPU負載在這一瞬間超過了40%
+我的SERVER一到40%它就DOWN了
+沒有到100%就DOWN
+40%就DOWN了
+然後我就要重開機
+然後網路流量也一樣有一些見風
+那後來針對類似的攻擊
+最簡單的方式就是加黑名單
+就是針對這些IP就做黑名單
+但是如果每次被DDoS攻擊
+你都要手動加黑名單是不是有點笨
+因為它有時候是分散式攻擊
+它就是很多個IP
+那你要加幾個IP
+那你隨時都要做在那
+所以我後面有設置動畫
+所謂自動畫是說
+它的請求
+它這些請求只要5分鐘內超過2000次
+5分鐘內超過2000次
+我就直接自動把它加入黑名單
+然後就永久封鎖
+那因為我的網站
+客戶也不多
+所以封鎖錯了也沒差
+不缺客戶
+不缺客戶
+要就直接連續我
+所以我就設了一個機制
+然後5分鐘超過2000次請求
+就自動加黑名單
+然後它就永久被我封鎖掉了
+所以我大概經歷了幾次以後
+手動封鎖完
+我後面都用自動畫
+好,那我們先來講這幾層的DDoS攻擊
+跟DOS攻擊
+那我們講網路層跟傳輸層
+這兩層我會一起講是因為
+有很多的單位
+他們也是一起講
+第三層、第四層一起講
+那為什麼會一起講
+主要是因為有些攻擊
+它可以是第三層也可以是第四層
+它兩層都有關係
+所以一般來說它是兩層一起講比較多
+那我等一下再講的時候
+大家可以去思考一下
+它可能是在第三層還是第四層
+那第三層我簡單講一下
+第三層大概就是偏向我們的IPv4、IPv6
+還有我們的
+譬如說ICMP的這些寫定
+比如說PIN、TraceLaw
+然後以及像是
+我們有定值還有路由
+路由也算是第三層
+那如果是傳輸層第四層的話
+比較偏向是TCP跟UDP的協定
+就是我們的可靠傳輸跟不可靠的傳輸這兩種
+那我們等一下來看一下這些攻擊
+它可能是哪一層
+那第一口來講ICMP的Flow
+Flow就是洪水
+跟洪水一樣
+我用ICMP的這些協定包
+用洪水攻擊
+那ICMP有什麼比較知名的指令
+就是PIN
+我瘋狂的用很多台主機去PIN你的主機
+那你就會收到很多小風包
+那PIN的話它最大的風包就是64K
+最大的就是64K
+所以你一直PIN
+你PIN多少它就會回傳多少
+所以你PIN它多少大小
+它就會回傳你多少大小
+這是1比1啊
+1比1
+所以一般來說ICMP的Flow
+你一定要很多台
+你才能造成對方負擔
+不然的話你是1比1
+那你就要準備很多台去攻擊它
+這是1比1的
+好
+那PIN的話
+我們除了去PIN一般Internet
+我們也可以PIN內網對不對
+可以PIN內網的這些192.168的這些內網IP
+好
+那一般來說
+我們內網在處理這些PIN的時候
+我主要是要找到它的MAC位置
+就是它的網卡的實體位置
+所以一般來說
+你在找主機的時候
+都會去網坡的位置去問說
+這個IP是誰
+對不對
+沒有反應
+對嗎
+對不對
+就是你要去
+ARP
+你要去
+去最後一個IP
+確認說
+現在這個IP位置
+是哪一個MAC位置
+所以你發送一個ARP以後
+它是會問所有
+有在內網的主機
+有IP的
+然後他們都會回傳你說
+是不是我
+是不是我
+他們都會回傳你
+假設我今天偽造別人IP
+譬如說偽造你的同學
+你的IP
+然後去做這個廣播
+那其他
+其他那個機器就會回傳你資訊
+我只發了一則
+255台都會回它
+我再發一則
+255台都會回它
+有沒有變多的感覺
+這個就叫放大攻擊
+所以最有名的就是這個Smart
+就是我偽造別人的IP
+然後我去問廣播
+然後廣播
+然後廣播就會把大家的回應
+回給被我偽造的人
+就是受害者
+這個都是放大攻擊
+我們會發現後面很多的阻斷
+跟DDoS
+它很多都是放大攻擊
+就是我只要發一個Byte
+你會收到幾十Byte
+幾百Byte
+就是它放大幾倍幾十倍
+那下一個
+我先問一下好了
+來這個ICMP Pro跟Smart
+大家覺得是第三層還是第四層的攻擊嗎
+第三層
+第三層
+因為它用的是ICMP
+它用ICMP
+再來
+第二個攻擊
+這個叫UDP的Reflation Attack
+UDP一般來說
+我們可能會發送UDP-123
+然後UDP-53
+這兩個一個是中央教室
+就是教室的NTP
+然後一個是DMS的查詢
+對不對
+用UDP的方式
+好那一般來說
+如果以DMS為例
+就是我發UDP-53
+假設我請求一個60Byte
+就是我發送的通報是60Byte
+那一般來說
+你會收到大概3000Byte
+大概收到3000Byte
+這也是放大多少
+放大50倍
+50倍
+放大50倍
+沒有啦
+50倍
+50倍
+放大50倍
+如果我又圍造別人的IP
+如果我又圍造你的IP
+然後我去發UDP-53
+然後它就會傳你50倍
+所以我發一次你就50倍
+50倍的攻擊有沒有
+50倍攻擊
+我就可以把它的流量重爆
+把這50倍的攻擊
+那更厲害的是這個
+大家有聽過這個叫NTP
+Mount List的指令嗎
+NTP
+Mount List的指令
+NTP就是我們發送123PO
+這個指令是用來做什麼
+就是你詢問它以後
+它會回傳你最近600個有來問的IP
+就是它回覆你最近600個有來詢問的人
+所以這個叫什麼
+放大幾百倍
+就是最近600個
+所以這邊有一個數字
+它可以放大206倍
+因為我發那個NTP
+Mount List
+它會回傳給被我偽造的人
+206倍
+這個東西很瞎
+那目前
+NTP Server
+大部分都已經把這個指令給關掉了
+但是還是有一些舊的還是有
+舊的還是有
+所以它這個都是放大東西
+那請用UDP的這種
+Reflection的攻擊
+第四層
+第四層
+因為它是用UDP
+用TCP UDP
+大部分都會跟第四層有關係
+好再來看一下下一個
+這個叫Connection的Pro
+連接的洪水
+一般來說我們的Server
+要跟我們客戶端要先建立連線
+才會傳資料
+所以我會建一個Connection
+那我們講這個建立Connection
+大家知道TCP的三段交握嗎
+對
+我來快速講一下
+三次交握
+這個簡報
+如果有加社群的
+我都會丟在Lite群
+所以大家不一定要拍
+有簡報
+好
+我們講三次交握
+快速的講
+左邊是我們的CLIDE端
+右邊是Server
+一般來說我要跟Server
+建立連線的話
+第一個我要告訴Server
+我要跟你連線
+所以我會丟一個SYNC的Flag
+跟他說我要跟你連線
+那Server收到以後
+他要回覆他
+要不要
+你不愛我也要講
+所以你要回他ACK
+ACK就是好
+OK
+但是同時Server要跟你連
+所以他也會傳送一個SYN的Flag
+跟你說Server要跟克萊端連線
+最後克萊端就要回覆他
+你愛我
+好那我知道了
+但是你也問我
+那我愛你嗎
+我也要回覆他
+所以就是要互愛
+我們才能建立關係的連結
+對不對
+所以這個是正常的三次交握的流程
+如果我們在這個正常三次交握的時候
+我們這樣建立完一個連線
+那我的Server就會被佔用一個連線組
+那什麼叫做Connation Flow
+就是我有很多台主機
+幾千台幾萬台
+都跟你這台Server建立連線
+而且這個連線是完全連線
+完全連接的
+就等於是
+你一個人對付很多個女朋友這樣
+完全連接這樣
+這個是TCP的Connation Flow
+但是啊
+如果我們丟了SIM過去以後
+Server回傳我SIM加ACK
+最後我沒有回覆他我愛你
+我沒有回覆他ACK
+那這個連線就沒有成功
+就沒有成功建立
+那請問Server這個時候會怎樣
+他會等啊
+他會等啊
+他會等你
+告訴他
+你愛他
+他會等
+一直等
+等到海孤時難
+等到他資源沒了
+等到錢都化光了
+好這個就
+這個就叫什麼
+這個就叫SIM floating
+這個叫SIM floating
+因為上面那個是Connation
+就是你要完全建立三次交握以後
+然後你就佔用他的頭一直佔用
+然後你可能都不太丟流量
+完全佔用完以後
+他就沒有連線數了
+這個比較辛苦
+那比較簡單的就是SIM floating
+我就一直丟SIM
+然後你回覆我以後
+我不回你
+所以你就會等我
+你的資源就會吃在那邊
+一般來說
+Server的連線數大概可以到幾萬
+大概可以到幾萬
+但是他不是一開始預設值
+就是可以幾萬的Connation
+還有設定
+然後可能會跟你的Server的一些資源有關係
+你的資源越多
+你的能建立的Connation是越多的
+所以預設像這個Engine
+Engine它的這個Walker的Connation
+它一般來說預設是1024
+所以就看你建幾個Walker
+如果你只有建4個Walker
+你大概就是4096個Connation
+那我只要有4000多台
+4096台一直跟你連線
+那你就沒有連線數了
+那正常使用者就進不來
+所以這個是這兩種攻擊
+那請問這兩種攻擊
+那請問這兩個攻擊是比較偏哪一層
+那請問這兩個攻擊是比較偏哪一層
+第四層
+第四層
+第四層
+對第四層
+就是TCC UDP的
+好那接下來我們再來看
+這個叫第六層
+叫呈現層
+呈現層
+呈現層在做什麼
+大概做三件事啊
+加解密
+壓縮解壓縮
+還有編碼Incode
+比如說什麼Bitfi
+Unicode
+大概主要是做這三件事比較多
+那我們在第六層
+呈現層
+因為它有做加解密
+所以一般來說
+我們TLS的
+TLS大家知道
+因為我們從傳統的HTTP
+傳輸是沒加密的
+變明文的
+變成說我要傳輸要加密
+所以會有TLS評證
+那TLS它是加解密
+所以它比較偏向在第六層
+那它有一個常見的工具
+叫做SSL TLS
+Abuse
+Abuse就是虐待它
+濫用它
+怎樣虐待它
+因為TLS
+它要跟你做傳輸加密
+它要跟你互動一下
+互動完成
+我們商量好一個加密的約定
+就是有點
+比如說
+我以後不要講我愛你
+以後講我討厭你
+就是愛你的意思
+就是要協商我們之間的對話內容
+所以我們也要做
+類似那種連接的感覺
+所以SSL Abuse是指說
+我一直頻繁的跟你去協商說
+我們來做傳輸加密
+來做傳輸加密
+一直跟你做這件事情
+我只要建立完這個TLS的
+傳輸加密的協定以後
+然後我就把它中止掉
+中止掉以後
+再跟你建立一次
+然後再中止掉
+再跟你建立一次
+就是一直頻繁的跟你去玩這個
+我又進來了
+我又出去了
+這個遊戲
+然後你就會被我煩死
+一般來說
+你要建立這個TLS的連線的話
+它是很吃資源的
+因為加密解密是很吃資源的
+而且我還要去告訴你說
+我們要怎麼樣做加密解密
+要傳很多資料
+所以這個就是TLS的 Abuse
+那它最著名的供期是這一個
+叫TLS Handshake Flow
+那它講這個供期
+我們要看一下這個流程
+我們要先知道說
+TLS有好幾版
+那目前已經被氣用了
+不能再用了
+就是1.1版以下
+包含1.1
+1.2還能用
+那是也不安全的
+現在都建議要用1.3版
+1.2版
+那1.2版它怎麼跑
+1.2版
+我們一樣
+左邊是Clython
+右邊是Server
+所以一開始
+他們兩章先建立好連線
+基本上我們前面的TCP
+的三次交握要先完成
+我們建立連線以後
+我才會跟你協定說
+那我們傳輸加密怎麼搞
+所以前面已經做完TCP的全連接了
+那接下來我們就要開始做
+怎麼做傳輸加密
+第一個Clython會跟Server說
+Hello
+我要跟你傳輸加密
+會發一個Clython
+那這個時候他會告訴Server端說
+我是用什麼樣的一個密碼套件
+因為你要做加密傳輸
+那你要告訴Server
+我大概是用什麼密碼套件
+然後Server這邊確認一下
+他會說
+Hello
+那我們這次用某一個密碼套件
+用某一組
+譬如說用AES
+那這個時候他還會給你一份
+certificate
+這個是什麼certificate
+就是X.509
+X.509的certificate
+就是我們會有一個信任電
+我們會有一些CA的機制
+要確認說現在是合法
+你是合法的
+那我跟你連接是正確的
+所以要給你一個certificate
+去確認一下
+那同一時間Server也會給你一個
+我們要交換金藥
+因為我自己本身會有私藥去加密
+那你要解密怎麼辦
+我們講非對稱式的加解密
+我用我的私藥
+你要用我的公藥去解密
+所以我就要告訴你說
+好那我們用這個密碼套件
+那我現在給你我的公藥
+那我要給你公藥
+會有一些公藥交換的機制
+那常聽到譬如說DH
+DH的一個金藥交換等等
+所以Server就會告訴你這些資訊
+你會發現它一次給的
+不是一個資訊
+有像TCP的Connection
+它是SIM
+一個SIM而已
+然後回來就是ACSIM
+很少
+但是它這個過去回來是一堆資訊
+一堆資訊
+你看它回來inline
+就給這麼多
+好接下來
+我收到了Server這些的資訊以後
+我是不是要回它
+好跟他說
+好那你給我的這個
+交換的key以後
+那我們也要來交換一下我的key
+交換一下我的key
+然後最後我傳送
+我們都已經交換好key了
+我們都可以互相加解密了
+好那我就傳一個finish
+這個finish
+是我加密過的訊息
+我加密了
+我已經加密了
+所以到紅色這邊
+我現在傳輸就已經加密了
+如果Server能夠解密
+那就結束了
+接下來所有傳輸的資訊都是加密
+因為我們已經協商好了
+好這個就是TLS1.2
+那我們這樣子來回兩次啊
+過去回來一次
+過去回來一次
+來回兩次嘛
+所以它叫兩round
+它叫2RTT
+兩round
+好這是TLS1.2的玩法
+那為什麼會有1.3
+因為1.2還有很多不安全的密碼套件
+比如說RC4
+SHA1
+還有像是TripleDex
+就是它還有很多舊的密碼套件
+如果你們的舊網站有用舊的密碼套件
+那很容易被破解
+所以它有1.3的出現
+那1.3除了去移除很多舊的密碼套件之外
+它還有做一些事情
+我們來看一下1.3怎麼玩
+1.3
+第一個
+因為它移除了大部分不安全的密碼套件
+所以它沒有剩幾個
+好像只剩三四種
+只剩三四種
+而且常用的就那一兩種
+常用就一兩種
+所以啊
+Cly端
+它可以猜
+Server應該是用這個密碼套件
+它可以猜
+直接猜說
+那你應該是用這個密碼套件喔
+因為大家都用這個
+那因為我已經猜中了
+假設我自己猜中了
+我這個時候就可以給你我們共用的key
+的一些資訊
+我現在就給你
+因為在前一回合
+在前一回合的時候
+我們是到了Server告訴我
+我才給你
+在前一回合的時候
+1.2的時候
+它是Server告訴我
+我才給你
+但是在1.3的時候
+因為你剩下的密碼套件太少了
+我一猜就猜中了
+所以我在這個時候
+就直接給你
+相關我們要做奉享經驗的一些
+譬如說
+所言曲線演算法的一些資訊給你
+那Server收到了這個資訊以後
+它馬上就可以跟你說
+這個密碼套件我們有
+而且我也可以用這個
+那接下來它也會跟我做這個
+金鑰交換
+然後它要做橢圓曲線的一個計算
+所以它也會給我一個key share
+接下來它還是會給我們什麼
+相關的譬如說
+X.509的這個資訊
+然後以及它會做數位簽章
+然後最後傳輸最後一個finish
+基本上我們在第二回合的
+丟X.509的時候
+就開始加密
+這邊就開始加密了
+跟前面不一樣
+前面是X.509
+我是沒有加密的狀態傳給你
+但是在這個時候
+我已經加密傳給你
+那是不是比較安全
+對比較安全
+而且他們用的密碼套件都是最安全的
+都是經過驗證的
+不安全的都刪掉
+所以這個時候
+我們finish
+已經加密了
+如果clite端確實可以解密
+接下來我們所有的傳輸都是加密
+所以它只要跑一run
+一run就結束了
+甚至它可以跑零run
+怎麼跑
+零run就是說
+我們之前連線過了
+那我就不用再跑一次
+這是零run
+所以它也有零run的意思
+那這個有什麼好處
+除了比較安全之外
+它也會比較快
+因為你跑兩run跟跑一run
+就差一倍了
+那速度當然會快一點
+一般來說你這樣子跑過去50mini秒
+回來一次50mini秒
+那你少了兩run
+是不是就少了100-200mini秒
+就會比較快
+而且比較安全
+好
+這個是1.3
+所以一般來說
+你們用1.3它的速度
+基本上會比較快
+會比較快
+那建議都換了1.3
+除非你們有一些
+比較舊的系統
+改不動了
+都是1.1 1.2
+那就無解
+那就要有其他的補償措施
+譬如說你們要有
+放在內網
+網路區隔
+還是裝很多的
+什麼防火牆等等
+好
+那我們這個TLS
+它這個交換資訊很複雜
+如果我一直平凡的跟你交換
+然後又把你中斷
+又跟你交換成功
+又中斷
+那你是不是你的資源就被我吃光
+好
+這個就是我們前面提到的這個
+TLS handshake flow
+就是我用洪水的方式
+讓你一直平凡的在做這個TLS的交換
+好
+這是第六層的攻擊
+好
+接下來我們來講第七層
+第七層的攻擊大家比較常見
+好
+譬如說
+HTEP的flow
+就是一直發送很多的
+HTEP的request
+就是我們常講的那個殭屍電腦
+好
+就是操縱幾百台幾千台殭屍電腦
+然後一直用那個HTEP的request
+去把你的網路流量或CPU充滿
+好
+這個就是最常見的
+那還有其他東西
+譬如說這個叫做快取的busting
+一般來說大家有用過CDN嗎
+內容交付網路
+就是把你的圖片影片
+跟一些靜態的網站
+HTNL交換Squip
+放在離客戶比較近的邊緣節點
+這是CDN的一個機制
+比較常見的就是Cloudflare跟Akame
+然後各大雲都有自己的CDN
+好那因為他要快取嘛
+工程師有時候換了一些圖片影片
+或是HTNL的文字
+他想要趕快看到結果
+但是因為他已經被快取過了
+他看到了就資訊
+那這個時候他會加上一些參數
+譬如說
+問號後面都會加參數
+他原本是1.1
+但他把那個b改成1.2
+就改個參數
+那他就可以觸發重新快取
+好觸發重新快取
+好這個機制看起來不錯
+可是如果是惡意人士來用
+就是你的快取永遠都沒有用
+因為快取的目的就是希望讓近的客戶
+可以趕快看到東西
+然後甚至我們server不會一直
+被很多的達流量進來請求這些靜態檔案
+但是如果21攻擊
+他會跑一個機器人
+然後他就一直幫你跑v1.1,v1.2,v1.3,v1.4
+一直用不同的一個參數去查詢的話
+那你原來的快取都是失效的
+沒有用
+你的server就會一直被查詢這些靜態檔案
+好這個叫做快取爆破
+快取的爆破
+再來下一個叫DNS Query的flow
+一般來說我們會去DNS Server去查詢一些資訊
+那DNS Query就是你要把這個網址轉成IP
+所以他裡面有一些資訊
+他會去轉換
+他會去查詢
+在DNS的查詢他是很吃資源的
+他吃CPU
+吃資源
+所以啊
+我們就大量的發送查詢
+大量的發送到DNS Server去查詢
+讓他負載變高
+而且我現在的查詢不是正常的查詢
+我查的是一些沒有的網址
+沒有的網址
+沒有的網址之類的
+就查一些沒有的
+那你這個server可能會頻於分泌
+因為你沒有記錄過啊
+你可能還要去做一些後續的處理啊
+好這個就是DNS Query的flow
+大量查詢不存在的
+或是隨機產生的這些直網域
+他就會吃很多的CPU
+那我問一下喔
+我問這一個
+DNS Query啊
+雖然我把它列在第七層
+但是一般來說我們做DNS Query
+是用
+用什麼協定
+UDP
+53嘛對不對
+所以有時候他也是屬於第四層
+他有時候他也是屬於第四層
+但是因為DNS
+一般來說我們是在應用程為主啊
+所以他可以列在第七層
+但有時候他也可以列在第四層
+所以為什麼有一些我會把它混在一起
+因為他到底是第三層第四層
+有時候有點難分清楚
+連那些大公司都把它混在一起
+好這是簡單跟大家分享
+好那等一下我會講
+DNS在架構面怎麼樣去處理這些問題
+好那這裡先講一些其他案例
+譬如說Forty內他有一個report說
+有很多的智能壓刷被木馬感染
+智能壓刷
+然後有三百萬字被感染
+然後他們可以受駭客的遙控去攻擊某些網站
+三百萬字壓刷
+我想說壓縮連網路
+壓縮連網路更好
+然後還被駭客入侵
+然後這些壓縮是屬於這種比較偏IoT裝置
+IoT裝置最大的問題就是他很少分心
+幾乎一出來以後三個月內就會有一個CVE
+就很容易鑽進去
+譬如說我之前有看過什麼
+AI馬桶
+AI馬桶蓋
+那馬桶蓋會去監控你出來的便便
+就是是不是正常的形狀顏色
+來看你是不是有生病
+那個都很危險
+我常常講這個案例
+一般來說
+低豆子攻擊那些殭屍電腦
+幾百台幾千台就很屌了
+幾百台幾千台很屌
+但是這三百萬字
+所以有一個超強的軍團
+好那這一個案例
+這幾年大家有聽過
+雲端廠商他們有一些物件式儲存
+例如說AWS的S3
+A9的Blob
+然後GCP它有自己的類似物件儲存
+物件式儲存最大的好處
+第一個它永遠不會壞掉
+幾乎是一萬年才會壞掉一次
+就是我們有生之年都不會看到那個檔案壞掉
+第二個是你有多少流量我都吃了下來
+非常高可用
+它沒有網路流量的限制
+它非常強喔
+所以曾經就有人放了一個圖片
+在這個物件式儲存裡面
+然後被這個圖片被DDoS供給
+那大家知道雲端吃的那個費用
+又很大
+一塊是流量
+你只要檔案從雲端離開到Internet就會收費
+所以我對這個檔案DDoS供給
+它每秒500Mbps
+DDoS兩天吃了一萬一的瘡蛋
+這樣供給很多
+這個A到SA9的GCP都有吃過這樣的供給
+那你中了怎麼辦
+就是付錢
+中了就付錢
+那請問這個供給怎麼放
+這供給怎麼放
+因為檔案發在那邊
+你就是要給人家看
+然後它又沒有流量限制
+它無敵啊
+怎麼放
+如果Google的話
+有一個Google的Armor
+就是Google牌甲
+好像可以擋
+那如果是A到S的話
+它的S3本身沒有擋
+沒有機制可以處理
+唯一解法掛CDN
+掛CDN
+就是你的檔案不應該是直接
+它就可以看到原始的檔案的
+物件儲存空間
+它應該是前面擋一層CDN
+然後CDN就會在外層先吸收這些流量
+然後CDN它本身也會有一些惡意
+惡意的這些攻擊機制
+它會去擋
+所以像A到S的話
+你可以掛它的CDN
+或者是掛Cloudflare
+都可以去解決這個問題
+因為CDN的機制本身就會去擋
+這個是一個案例
+再來
+有很多雲端主機都變成DDoS的跳板
+那雲端主機最大的好處是它的網路流量幾乎是無線的
+所以它網路流量是很難被吃滿的
+我們公司網路流量頂多100Mbps
+很快就吃滿了
+雲端他們的網路流量都是以G起跳的
+G喔
+幾G幾十G喔
+那他們這個流量就很適合拿來做什麼DDoS的攻擊機
+所以這個跟大家分享一下
+那最後壓軸就是這個
+那針對這麼多的DDoS的攻擊
+可以到底怎麼做
+怎麼防禦
+沒有辦法用一個機制檔
+好這個是第一個要知道
+沒有辦法用一個機制檔
+所以它用眾生防禦
+那怎麼樣的眾生防禦法
+我們下面這個是正常的使用者User
+正常User一般看網站就是用HTTPS
+那有一些
+譬如說公控啊
+或者是Server對Server的一些
+無教協定啊
+那它可能不一定是用HTTPS
+它可能是用TCP或UDP的Code
+或者是像一些公控的
+他們可能比較多用NQTT
+就有好幾種模式
+這個是正常流量
+我們看DDoS流量上面的這個
+DDoS流量的話
+ALS第一關
+它在全球的Infarm
+全球Infarm
+我們要先知道一下
+它會有全球的DMS的功能
+跟全球的CDN功能
+他們在全球的這些Infarm裡面
+他們有一些是自己的機房
+有一些是跟當地的ISPS合作
+譬如說中華電信
+遠傳這種ISPS
+跟他們合作用他們的機器
+所以它全球都會有一個盾牌
+盾牌的服務
+它可以預設幫你擋第三層
+第四層的DDoS攻擊
+或是DOS攻擊
+這是它的第一道關卡
+如果攻擊者能夠通過這個第一道關卡的話
+接下來下一道要進到DMS
+DMS如果你是自己建一台Server的話就一台
+如果你是用雲端業者的DMS服務
+它不是一台
+它是幾萬台
+它幾萬台
+所以我們在這個Laut53
+這個A-DOS的DMS服務
+它有一個功能叫Anycast
+Anycast是什麼
+就是一般來說我們會去PIN
+8.8.8.8.8對不對
+一個IP
+理論上一個IP是對一台Server
+理論上
+但是它的Anycast可以讓你這個8.8.8.8
+後面是一批
+一批Server
+一批Server全部都是用這個IP
+這個是Anycast的功能
+所以它全球有一堆的DMS Server
+它今天在PIN
+因為我不知道A-DMS是哪個
+我們用8.8.8.8
+比較有名
+如果它PIN
+它處理的是8.8.8.8之類的
+它要去做DMS的Query Flow
+就是你要做大量一直查詢
+一直瘋狂查詢
+讓它的CPU吃滿
+是有點難的
+因為它有幾萬台
+你要讓一台吃滿效能是很簡單的
+但是你要讓幾萬台吃滿效能
+那你可能要有幾十萬台去攻擊它
+才有可能
+但是你要有幾十萬台的攻擊機
+去攻擊機
+有困難
+然後包括說這個DMS的反射攻擊
+它在反射的時候不會馬上反射到你的主機
+它還是在他們的那一群的DMS Server
+那些節點在反射
+所以它會先幫你吸收掉
+然後它發現異常它會先擋掉
+所以在第六層的這個攻擊
+大部分它可以
+sorry這是第七層的這個攻擊
+這個地方它就會擋掉DMS強管的攻擊
+再來我們經過DMS以後
+再往下理論上它會解析為一個IP
+但是在進去你的Server IP之前
+有一些靜態的圖片影片
+我們可以用CDN的機制
+去把檔案讓比較近的客戶先看到
+好那這些CDN的Server
+可能是有幾萬台幾十萬台
+他們也可以幫你吸收流量
+而且那些圖片影片啊
+或者是我們玩遊戲的這些
+壓縮檔啊幾G啊
+都不是從你Server來的
+我的意思是說
+它不是去你Server要這個流量
+要這個檔案
+它是在邊緣節點跟你要這些檔案這些流量
+所以你的這些大量的流量在邊緣就會被
+ALS吸收掉
+它就會幫你吸收這些大量流量
+不會一瞬間你的客戶就會被充爆
+好這個是CDN的部分
+所以它可以解決什麼
+譬如說我們前面提到的
+HTEP Pro
+就是它有大量的Request
+以及TLS的Handshake
+其實在這邊它也會先解決掉
+以及這個叫Edge Cache
+就是它的這個快取啊
+可以幫助我們把流量給還緊
+而不會全部衝到Server
+Server就掛了
+我們在這個CDN的地方
+還可以去掛上WAF
+WAF是網站應用程式防火牆
+它是掛載在第幾層
+第七層
+大家都知道
+所以第七層常見的除了HT Flow之外
+還有一些
+剛剛有
+我有網站被攻擊的那個案例
+就是每幾個小時被Request幾萬次啊
+它本身可以去設定這個叫
+RAID-based路
+就是幾分鐘它請求幾次就會自動封鎖
+但是它的封鎖是暫時封鎖
+不是永久封鎖
+所以還是要自己加一個自動化黑名單
+它才會永久封鎖
+不然它是暫時封鎖
+那我們第七層還有很多的阻斷東西
+譬如說Z-Coin Injection
+Z-Coin Injection
+把你的一些資料切除
+甚至可以取得你的管理者的權限
+然後讓你的服務給中斷
+還有一些什麼XSS
+或者是AI會去爬蟲
+會去各網站查
+它也可以幫你去
+阻擋這些AI的爬蟲
+還有一些機器人的攻擊
+這個在WAF的地方可以解決
+那我們這邊
+如果擋完以後
+還是有惡意流量進去怎麼辦
+它就會繼續往裡面
+繼續往裡面
+然後我們在CDN
+它會放靜態的檔案
+我們前面是不是有提到
+GCP的攻擊案例
+就是雲端的物件式儲存
+被D-Dose攻擊
+所以它唯一的解法就是CDN
+那A到S也有自己的物件式儲存
+叫S3
+它本身可以把你原本Server的靜態圖片
+跟影片就放在這邊
+它不會影響到你Server的一些效能
+所以你等於就是把你的一些原始的資料
+放在其他地方
+然後用A到S的其他服務去分散Server的負擔
+所以你放S3
+然後再搭配CDN
+就可以防禦那種單個圖片
+D-Dose攻擊
+讓你的帳單爆表的這個現象
+然後最後我們終於進來了我們Server Fund的網段
+終於進來了Server Fund的網站
+進來以後我們這裡有一道
+你要進來這個網段之前
+我有一個Gateway
+這個叫Internet Gateway
+它是一個網際網路的大門
+你要進到Server之前
+你要先統一進這個網路的大門
+進大門可以做什麼?
+我們可以統一做流量控管跟紀錄
+我能夠紀錄你的網路流量
+如果有異常的話
+我可以觸發後面的自動化的執行
+可以去做其他的阻斷
+再往裡面走
+我們會到負載平衡
+負載平衡在做什麼?
+我們只有一台Server的話
+很容易被重破
+那我至少要換兩台以上
+那我有兩台以上的話
+我必須要有一個機制在前面去偵測說
+我後面有幾台Server
+哪幾台是健康的?
+哪幾台的流量負載是低的?
+所以我才把新的客戶的請求
+進到負載低的那一台
+而且是健康的
+所以這個是負載平衡器的作用
+再來我們是不是會做這個傳輸加密?
+那有加密就有解密
+我們是不是會掛載一個TOS評證?
+你要有評證才能解密
+解密是很吃資源的
+所以我不要在Server上解密
+我就直接在負載平衡器去做TOS的卸載
+我在這邊就直接解密
+我的Server就吃不到這個解密的資源
+那這邊卸載了很多的流量以後
+最後我要進到Server之前
+我還有兩道防火牆
+第一道無狀態防火牆
+第二道防火牆
+有狀態的防火牆安全群組
+我們有允許的流量才允許進來
+有允許的IP才允許把流量進來
+所以這邊又有兩道防火牆檔
+最後才會進到你的Server
+ALS Server的服務叫EC2
+但是如果你的Server只有兩台
+還是很容易被控到
+所以它有一個機制叫Auto Value
+它可以去判斷你的網路流量的數量
+或是你的CPU負載
+來去決定要不要自動幫你掌第三台
+第四台、第五台的Server
+來去分散這些Loading
+所以它就提高你整個雲端的韌性
+經過了這麼多道
+幾道
+一道
+兩道
+三道
+四道
+五道
+九道
+七道
+八道
+九道
+十道
+如果最後真的你通過了十道關卡
+進到我們的Server
+那恭喜你可以DDoS
+但你剩下的量真的很少
+然後也許會被我的一些自動化機制給檢測到
+那我的自動化機制就會在邊邊
+右上角這裡有一個CloudWatch
+它是可以去檢視雲端的所有的資源的一些指標
+比如說CPU負載、網路流量
+還有有沒有一些Log、異常
+那有異常的話
+它可以觸發一個事件
+自動化的執行一些行為
+比如說我把黑名單
+還是我把它阻斷
+我可以寫一些程式去自動化執行
+或者是說
+我發送一封Email或簡訊給我們的管理者
+出事了
+趕快來看一下
+這個就是附加的第十一道
+就是當
+老實沒有辦法擋住的時候
+還是要有人為介入
+或者是你已經有設好一些自動化圖
+所以這就是第十一道
+要經過十一道關卡進來
+有沒有很難
+很難啦
+請問各位
+地端的機房有沒有辦法做到十一道
+沒辦法
+所以低豆子的供給
+在各位公司是沒辦法百分之百阻擋
+當然你在平端比較容易
+好
+我們沒有賣產品了
+我只是講一下
+地端要擋真的很難
+就是找那個自動化公司來幫忙吧
+好
+那我的今天的分享
+大概就講到這邊時間
+剛好
+那最後
+我自己成立的社群
+Dexus Taiwan
+如果大家有興趣的話
+可以加入
+有一些常見的主題
+每個月都有免費的分享
+然後
+我今天的簡報
+也會統一的
+整理完
+然後丟在這個群組
+然後以及ISC2台北的LINE群
+好
+那右邊是我的好友的連結
+有興趣可以交好友
+好
+那我今天分享就到這邊結束
+謝謝大家
+謝謝
+好的
+我們大會主辦發表方位
+那個
+我們對一份
+感謝說
+那就
+那就
+本人代表大會
+謝謝我們的任理演講
+很精彩的演講
+我再給大家一個掌聲
+好了
+謝謝
+很感謝各位
+旅會的夥伴們
+然後
+聽到那個
+瑞
+這個
+資安大師的這個分享
+那因為
+疫情的詹奏
+我們緊接著
+插一場
+來跟各位做一個簡單的
+在這裏
+的
+是
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+有
+山
+有
+就是
+那里斯珀生的国家
+也不是封面的禁止
+日本政府用了余 station
+nealed this Jc start to every manufacturer.
+ixed assunto here also is the employee of the Panasonic
+That I need to promote our product.
+this page showsPansonic Sandy comparisons on such a Jc start.
+Sonic is only in Japan, everywhere
+中文化的以口味,Panasonic的第一產品上市場的產品
+一般台灣有利的安全性建築主義,
+不然當然要保持安全性,
+如果有一個Panasonic的服裝,
+可能會保持安全性,
+企業的研究
+س remedy
+由於5月以6月
+前段ofund
+me
+style of the navigation for such a security camera and also Network receptor e מ
+技能性化我的執属
+但是我跟 filters超有重要的另一個公司
+一些官方安全 remarks, rights,是用更分以多的事情。
+就是相直 ko needs europe,就很重要的事。
+某些政府可以预 assemblies,
+社交組合,如此 punkt atual的这个地方,
+其次有条件是抗计判的服用者。
+但是rás是一些三个 barrel的这些功能,
+但作为衝测�인主机。
+而且中间的商品,
+或特长的平板来自知智太建设 отмет,
+例如 它是颜 sust修杆,
+还是邀请挡梦没头说,
+更加一深谷ör,
+或是建设检设 reason Wisani,
+也可以握任食べ物枚,
+频道来自知智太生产性的".
+and then after one-third of the application
+don't do such energy management device
+that's because J-SYSTA-level will become a condition
+of such a government-governmental subsidy
+particularly in Japan
+we can rebuild a new house in the Japan market
+at that moment somehow this subsidy is quite important
+from a customer perspective
+哎呀高藏在的GSTAR系统局
+和实施链是某些 Management
+和重 methods变成了某一切
+所以cin就是ировать
+从ol道系统局
+стал邶途的ane用
+的缺畏 等等
+因为我不会去批評
+但是,它是很重要的,在日本市場上的公司。
+我回到一些歷史上,
+在我认为,
+一般,
+一般,
+一般,
+一般,
+一般,
+一般,
+一般,
+一般,
+一般,
+啊,
+你呢,
+想你敢说,
+一般,
+一般,
+一般,
+一般,
+ущ Williams,
+一般,
+整理的局面,Evo montag should be a solution,
+then Oh yeah,
+EU,日本和EU published such a guideline for such an IoT device.
+After that,Fansom surveyed such a guideline,
+and then such an enhanced security function from 2021.
+And then in such a sense, I'm not sure, quite old devices.
+Actually,Fansom surveyed such a network-connected remote condition from 2013.
+And then probably the first five years, not so secure.
+But at least after 2013,
+I developed or I designed such a security for such a remote condition.
+Not only remote condition, but also some other IoT devices from Fansom.
+And then somehow enhanced such a security function from 2021.
+And then recently, now it becomes a regulatory phase.
+And then, yeah, the first one that is here,
+It is not, yeah, I can say,
+It has not become enforced in the world.
+But, yeah, just an announcement.
+The first one that the U.S. announced,
+is a cyber trust mark on 2023.
+But, yeah, in this moment,
+It is somehow stored for the U.S. market.
+But, the U.K. already provided the PSDI regulation in the U.K.
+And also, as you know,
+Yesterday, Ito-san kindly explained such a sheer way,
+Slavery resistance tax for the EU, European Union.
+And also, Japan got onto such a system program in the last three years.
+And then, in such a sense, yeah,
+Based on such a guideline, starting from 2018.
+And then, we have designed such a IoT device based on such a guideline.
+And then, actually, also, we have just entered into some trial by METI,
+Governmental Organization for such a GC-STAR program.
+And then, yeah, certification on such a secure program.
+And that is, yeah, already provided.
+Okay, so, yeah, I'm talking about such a, based on Japan situation,
+But also, for some, as I've experienced some international initiatives.
+Yeah, actually, from manufacturing perspective,
+Yeah, each region or each country,
+They are establishing such a regulation or a leveling scheme.
+But, yeah, slightly different between each nation or each country.
+That is quite a difficult situation from manufacturing perspective.
+And then, yeah, actually, we have some relationship with some other manufacturers.
+Yeah, let's say, somehow, our, yeah, keyword for this issue.
+And that we, yeah, qualified once, certified everything.
+And that is our goal from, yeah, private sector perspective.
+But, yeah, unfortunately, each region establish such a regulation or a leveling scheme.
+Yeah, as I mentioned before,
+PSP, yeah, that is a UK-based regulation.
+And also, Cyber Resilience Act.
+It is also a EU-based regulation.
+And to cyber customers.
+It is a voluntary leveling scheme in a EU-based.
+But, actually, if we are looking at such a scheme, yeah,
+Yeah, a condition or security requirement to achieve such a regulation or a leveling scheme.
+It is slightly, not slightly, yeah, totally different, actually.
+And then, but, recently, there were some international initiatives.
+Yeah, actually, I already met the Japanese government announced some global cyber security initiative.
+Sorry, I forgot to describe it here.
+In the last year, October 23rd,
+Mate announced such a global cyber security initiative.
+And also, Mate in Japan government signed
+Marchual Awareness Program between
+JSTER and also United Kingdom PSPI.
+And also ISO, IEC 27444.
+And that was published as framework for such a global raising system.
+And then, also, recently, in this March,
+Singapore government and also Japan government also signed some
+Marchual Awareness Program.
+At that moment, I was here,
+Hagese, some have Japanese government keep us on
+And also Singapore government keep us on
+Have some discussion with me.
+And then, at that moment, yeah, they have signed such a Marchual Awareness Program.
+But, basically, a Marchual Awareness Program, it is not,
+I would say, yeah, for example,
+UK, Japan, KS, it is actually one direction.
+Yeah, if some device are certified as a JSTER program,
+At that moment, such a device is automatically certified as UKPSDR.
+And because UKPSDR defined, just only three, yeah, requirement.
+No deployed password, iPod, another two.
+But anyway, it is quite small or minimum.
+Quite minimal.
+And then, how can I say, it is not bi-directional.
+Just only one, especially one, but one direction.
+So, between Japan JSTER program and also Singapore CSA,
+Cyber, so I forgot CS,
+What's CS system all about anyway?
+Such a Singapore government also provides such a program.
+But, actually, it is not bi-directional.
+But, yeah, if such a device certified as a JSTER program,
+Then, some part of the, yeah, Singapore regulation is certified.
+Just only one part, some part.
+And, other direction is also the same.
+If such a device certified as a Singapore program,
+Then, some part of the JSTER program,
+It was, yeah, somehow satisfied.
+It is not, it is just a material-awareness program.
+But, like I say, somehow, yeah, still qualification or certification in each country,
+It is, yeah, still required.
+It is not so idealistic,
+But, yeah, each government member has quite a big step to achieve such a final goal.
+Our final goal would be, yeah, certified once, yeah, qualified everywhere.
+That is our final goal.
+So, anyway, in this moment, it is not achieved,
+But, yeah, each government make a quite big step to achieve such a goal.
+So, last part, let me check the timing.
+So, how many people do the time to move to the last part for the technology side.
+Yeah, as I mentioned before, now we are developing a level 2 program for smartphone area.
+And also, other party is now developing a level 2 or level 3 program for other area.
+Like as a network router or a safety camera.
+But, I am an electronic engineer.
+And then, now I am developing such a level 2 program for such a smartphone area.
+And then, as I mentioned before, level 1 defines some minimum level conformity assessment for any type of IoT devices.
+And then, now, level 2 defines category specific conformity assessment against anticipated threat.
+And also based on some study of assets to be protected attack surface.
+And then, in such a sense, your firmware itself or password, it is quite important part of the protection.
+But, as I mentioned before, or to explain such a use case for such IoT devices, some IoT data acquired by such a device by use of the sensor.
+And, command control, it is quite a big asset to be protected from such a smartphone area.
+And then, how to protect such IoT data from, yeah, some storing, yeah, steel by such a machine attack or, yeah, fake such a command control to prevent such a fake command control.
+And, it is quite important part of the, yeah, protection on such a smartphone area.
+And then, if we are looking at the J-Sister level 1 program requirement, basically it is common for all type of IoT devices.
+And, actually, for level 1 program, in total there are 16 requirements.
+And, it is not an official categorization, but basically there are 11 technical requirements and also 5 operational requirements.
+And, for example, just for, yeah, red parts that is a technical requirement.
+And then, yeah, requirement number 1 to number 4.
+And, it is quite integrated into such a password or access control authentication.
+And then, such a, that would be a some technical requirement.
+And, for example, for example, there's no default password or a password should be longer than 6 string or something.
+And, such a technical requirement is defined in J-Sister level 1 program.
+And, other five, that would be an operational requirement.
+And, for example, such a policy on vulnerability.
+And, that should be somehow, yeah, informed.
+And, for example, it is some typical operational requirement for such a level 1 program.
+And then, basically, for such a technical requirement,
+ストレージ,どうぞ、コミュニケーション、ファーメアクレート,
+That should be, shall be protected by software in this moment.
+And, some hardware mechanism, it is not required.
+And then,ストレージ, of course, there is some,
+there is some user data in such devices.
+And then,ストレージ, of course, that should be protected.
+And, communication between device via server and also mobile application,
+such a communication also should be protected.
+And, also, firmware update.
+Firmware update, that is quite an important part.
+And, such a firmware, it should be protected.
+But, in this moment, it is software level.
+And, then, now, we are talking about
+such a level 2 requirement for such a smartphone device.
+And, then, in this moment, it is just currently under discussion.
+But, at least, data provides some requirements,
+list of the requirements to IPA or METI.
+And, then, currently, there is such an enhancement,
+and that will be discussed under IPA.
+But, first one, that is really a secure,
+that is a hardware mechanism to produce such a firmware.
+Authentication.
+Authenticity required as well as integrity.
+That is one part.
+And, also, to achieve such a goal, a secure group,
+that is practically required.
+And, basically, such a software or firmware
+that will be assigned by ECDSA or RSA.
+And, then, before loading such a firmware to the SOC,
+such a program will be verified by using such a signature
+by a hardware mechanism.
+That is required.
+And, second one, that is a hardware-level key protection.
+Typically, it would be used, realized by such a E-fuse
+or or OTP.
+Yeah, one-time program.
+Yeah, area for such a device.
+And, basically, it is somehow quite secure.
+Comparing to such a flash memory or
+conparing to such a flash memory.
+And, then, some key would be categorized as
+socorded as a critical security parameter.
+And, then, such a key should be protected by hardware mechanism.
+It is also required.
+And, then, last one, that is quite difficult part.
+Probably, for IT cases,
+PCA area or a hardware mechanism.
+It is also required.
+And, then, last one, that is quite difficult part.
+Probably, for IT cases,
+PCA area or a hardware mechanism.
+It is already common practice.
+But, for IoT device cases, it is quite new.
+Power device unity.
+That will be required.
+And, then, such a key will be used to project such a communication with servers.
+Then, such a key or creating certificate.
+That shall be a unique cloud device.
+It is quite difficult part.
+Probably, for IT cases, PCA area or mobile phone area.
+It is already common practice.
+But, for IoT device cases, it is quite new.
+Probably, for IT cases, PCA area or mobile phone area.
+It is already common practice.
+But, for IoT devices cases, it is quite new.
+That will be required.
+And, then, such a key will be used to project such a communication with servers.
+Then, such a key or creating certificate.
+That shall be a unique cloud device.
+It is also required.
+And, then, yeah.
+Actually, to tell the truth, for such a Panasonic device,
+We are using Taiwanese ASI.
+And, then, almost safely, yeah.
+I come to Taiwan to discuss this type of requirement with the Taiwanese company.
+And, then, I requested them to just provide such a hardware mechanism.
+And, then, it is quite important also for Taiwanese industry to prepare such a hardware level protection.
+And, also, based on such a Taiwanese ASI, we are now developing new product,
+Not only existing product, but also for new product.
+Then, such a product will be released in, not only in Japan, but also for Taiwan or some other country.
+And, then, to protect such a device,
+Yeah, you can say, somehow, Japan and also Taiwanese relationship.
+That is quite important.
+That is the reason why I am here to explain such a situation.
+And, then, it is not written here, but anyway.
+This program or J-Sister policy,
+It is quite relating to such an economic situation or economic defense from a government level.
+And, then, quite, this is J-Sister programs.
+It is quite important for not only for Japan, but also for Taiwanese industry.
+Okay, so, thank you very much for your attention.
+Thank you very much for your attention.
+Thank you.
+我想這個是一個,
+我聽到對於J-Sister
+非常非常詳細的一個解釋跟說明
+因為我們知道說J-Sister這一個 program
+在2024年日本政府
+它是一個強制性的要求
+前面的Idea是針對這個供應鏈的安全提出的一個設計
+那J-Sister呢它是一個強制性的要求
+所以大家對於出口
+對於公司來講
+如果要賣到日本那邊去的話
+就是要拿到Zestart的要求
+這個是我看到最詳細的解說
+因為除了標準法規的內容說明以外
+再加上實務的介紹
+因為他本身也是在送下工作
+所以在物流網安全的設計上面
+有非常多的經驗
+我覺得非常精采的影響
+再次感謝YamaOdaさん的精采的演說
+謝謝他
+等一下我們有一個中間休息的時間
+請各位到外面這邊享用咖啡跟茶餅
+那邊我們稍後可以請來做下一場的會議的分享
+謝謝大家

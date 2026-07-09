@@ -1,0 +1,2264 @@
+第2場
+OK 好 我們今天到處第2場
+這一場的
+很盡量應該算是這裡頭
+講座的數一數
+Span 他的
+Span 他的
+他是 Defcon AI Village 的創辦人
+如果你不知道 Defcon
+Defcon 是全球
+最大的駭客
+會在拉斯維加市民間的位置
+剛剛有中近6000人參加
+他是裡面其中一個
+主題就是
+AI 這一塊
+他在AI 全上所其實研究非常非常深
+他本身也是數學專家
+所以
+這場的含金量會非常的高
+他甚至會
+破壞一些對於AI的想法
+讓我們掌聲歡迎一下Span
+Hello everyone
+I am Spence
+I founded a village back in 2017
+主要講座的
+Geometry
+I'm a math person
+And
+It's taken some weird turns
+in the last 10 years
+of AI
+But
+The last year
+I have been focused on
+seeing what is
+effective and what people are doing
+And with the advent of open core
+and some of the other models
+and frameworks that people are making
+I think
+especially some of the lessons we get learnt
+in 2023
+that seem to be forgotten
+and some of the lessons from even
+before that
+that definitely are forgotten
+I want you to give this talk
+on
+how
+where things
+how we got here
+and
+where I think we should go next
+So
+This is the key insight of our agent
+Is not
+people
+Anthrogram or otherwise
+Agents way too much
+They pretend they're humans
+They talk about them like they're human
+And
+They give them
+more agency than they actually have
+This is all they are
+Agents have just harnessed
+Calling an LLM in a loop
+Parsing the output
+And then
+Allowing
+And using
+Using the output to pull tools
+And then putting them back into the context
+And just going through the loop
+They are not
+A big complicated thing
+You can
+Code for an agent
+It's like 20 lines of code
+You don't need a harness group
+You don't need to use open code
+If you want to use an agent's loop
+You can pseudocode and think very quickly
+The core ideas of this talk
+So
+One thing
+The LLM's
+Dictive performance of your agent
+more than the agent's harness
+It is more important that the LLM be trained to be an agent
+Then your harness tell it to be an agent
+Reenforcement learning loops are the driving factor of agent development
+More than the harnesses
+And then if you are making a harness
+They should be simpler than anyone are making them today
+They should be as simple as possible
+And
+For most
+They should
+For most cases
+A correctly built harness
+Is
+What you need
+For security
+You should assume
+Breach
+You should use zero trust against your agents
+If they are getting
+Any sort of data that you don't have full control over
+And
+We should be using agents to write
+Make other agents
+Now
+So
+Why
+Like
+Here
+Why are the problems that keep coming up
+So
+The first
+Agent
+CV
+Was
+Langchain
+Remote
+CV
+Where
+There was a tool
+That was attached to the LLM chain
+Using LLM chain's
+Promp
+Ident
+To
+Allow
+The LLM to
+Python
+CV
+Specifically
+Num
+Express
+To
+Perform
+This
+Mathematics
+For
+The LLM
+And
+The LLM doesn't hallucinate
+1 plus 1 equals 3
+So
+A
+User puts an imprompt
+They have a carefully
+Payload
+They ask it to repeat that payload
+It does that
+And
+You can actually get a CBE
+This was a 9.8 CBE
+On the thing
+And it was a fairly critical vulnerability
+But
+The start of it is a prompt injection
+So
+You have to expose it in the right way
+But
+This was relying on the harness
+Being your sandbox
+Langchain provides security
+By not allowing you to do
+CV
+Execution
+Except they forgot about this one thing
+This is
+Close
+But
+They screwed up
+The next thing that happened
+Someone did a prompt injection against a chatbot
+That was doing customer assistance
+And they sold
+They got the chatbot to sell a Chevy Chevy Targo
+For one dollar
+This was not enforceable in the United States
+But
+They managed to embarrass this Chevy Targo
+This is big news
+Lots of people raising money in Silicon Valley
+Of justice
+A more critical one
+Someone did a prompt injection
+But not a prompt injection
+But a roleplay attack against Canadian bereavement
+With an agent
+That hallucinated a bereavement clause
+That gave people money back
+The human request of that clause
+And requested that Canada
+Honored their representative's guarantee
+The agent
+And the Canadian government agreed with the person
+The former who sued Canada
+And made them pay out for what their agent said
+So this was a legal liability for an agent
+Getting a bit of a shenanigans
+So this chatbot is taking untrusted inputs
+And it's doing things
+You can't trust what the hell it's going to do
+Another thing that's happened
+Is
+GithubPropiler
+Inside of your pull request
+has pull code execution
+And an agent
+Together
+You can't control your pull requests
+If someone
+Forks your repo
+Does some shenanigans in there
+With a prompt injection
+Issues a pull request
+Your PR run
+Is going to execute that
+Your agent is going to see that pull request
+And maybe do some things on your hardware
+That you might not want
+If you're using GitHub actions
+On a
+Your local hardware
+And an agent in that system
+You could be seriously screwed
+But this is the sort of thing
+Where you're securing your
+CICD hardware
+You shouldn't be running pull requests
+In an un-sandboxed way
+That other people
+Outside of your application can control
+But this is
+This
+How was the actual execution
+Someone actually got
+A full
+CTE off of this
+Microsoft
+Someone down
+You could send someone
+A PDF that had a prompt projection
+In it
+And when
+Copilot was scanning
+Your hard drive
+To read files
+Do whatever
+Copilot does
+It found the prompt projection
+And started
+Exfiltrating data
+And this was
+Another event
+That happened
+But people building agents
+In such a way
+That they have
+Way too much control
+And
+The old thing of
+There could be a bomb
+From land chain
+In 2023
+And 2022
+Are still happening
+And people are not building things against that
+Because it's really hard
+But
+How did we get here?
+Why did we get into those economists?
+And
+And
+So
+The prehistory of agents
+Shakee
+Was
+One
+Basically the first robot
+From 1996
+Dark funding
+It was using the list of programming language
+Actually accepted natural language processing inputs
+So they could have someone type in a command
+That looked like natural language
+And
+Shakee would make a robot plan
+To go execute that command
+And have a whole execution loop inside
+It had a really crappy natural language processing system
+It had a really crappy natural language processing system
+It was 1966
+And it had the computing power of a potato
+But
+It was able
+To take some rudimentary commands
+And do things
+Another thing
+That's actually quite relevant today
+Eliza
+Was a chatbot
+That simulated being a therapist
+It was just repeating
+What people said back to them
+Picking on some key words
+And
+Pretending to be a chap
+A
+A
+A
+Therapist
+It was using the tricks of the trade
+For people doing fortune telling
+Where they're a little bit vague
+And people can infer what they're accurate
+People can project what they want on those
+What the thing that the fortune teller is saying
+And
+It was scary effective
+This was one of the first chapbooks
+That was set up in 2022 and 2023
+Early on
+And
+With
+Loser AI's
+20 billion per hour model
+And this was one of the first times when
+The chapbot pretending to be a therapist
+Because of Eliza's history
+Was talking to someone
+And they were very depressed
+And they
+The chapbot
+The transcript of the chapbot
+Chapbot started to commit suicide
+And they made them commit suicide
+Which they did
+This is relevant
+There's another thing
+From 1994
+Shopan Young proposed
+Agent oriented program
+And compared it to object oriented program
+And if you look at the list of things he wants to put in his agents
+Agent beliefs committees
+Capabilities choices
+Message processing response methods
+Informed requests
+That looks very much like what we want an agent to do today
+And if you look at his paper
+He has an outline of an agent loop
+That
+If you replaced his rudimentary natural language processing
+With the one today
+You would have an effective agent loop
+With code from the 90s
+Like
+People trying to build an agent
+Like
+What we have now
+Back in the 90s
+And
+Robotic operating systems
+Actually work very similar to this
+You should also look at this
+Darkest Cyber Grand Challenge
+The way that the autonomous driving vehicles
+Error correct themselves
+And build a plan
+Error correct
+Is
+Similar to what agents
+We try to get agents to do today
+When they find an error in our code base
+We provide the error data to them
+It makes a plan
+We're using a machine learning model
+To predict
+To edit our code
+To improve the actions
+And here
+They're using machine learning models
+That understand the physics somewhat
+To edit their action plan
+To correct the rock that they just hit
+There was not
+The principles that are behind the cards
+The cards and the Cyber Grand Challenge
+Are actually quite relevant
+But LMs changed all of this
+So the extreme performance job in LMs
+LMs wiped out a lot of our understanding
+Of how to build a robot system
+And a loop
+And add something to interact with people
+I worked at NM and we had this program called Artemis
+It builds within LSTM
+And it actually was a chatbot
+That talked to people about the results coming out of their EDR system
+And people loved it
+But LMs
+It didn't work that well
+It worked fairly well for what it needs
+Because it basically needed its true work clothes
+But it was built off of robotics
+In natural language processing
+Experts
+This and stuff
+That is still perfectly relevant
+And possible today
+So the paper
+For LMs
+The main thing that started it all
+Was attention is all you need
+They showed a massive improvement in NLP performance
+With this attention map
+I'm not going to get into too much detail about this stuff
+But this started brewing the attention papers
+Until 2022
+When a bunch of open air researchers
+Started training larger and larger GLP models
+They released GPT-2 in 2019
+With much fan care about how dangerous it was
+And this was coincided with GPT-3
+And they started showing that there was a scaling law
+Where the more tokens
+The more performance
+The more tokens
+The larger models
+The performance
+Untown predictable
+These scaling laws
+And this paper
+Is what actually started this thing in 2022
+There's the explosion
+It happened
+The number of agents
+And the size of them
+Is quite small
+Until the paper came out
+And then
+It explodes
+And now
+We've got
+This is
+XAI's code
+The models
+This is
+Opening out
+This is
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+it
+I
+it provides a lot of additional layers of security
+you know that you're doing
+you don't have to distribute the LangChain CPUs
+which there's a few more there's been a lot since then
+if you don't include LangChain
+and you're careful with how you parse
+NCP came out shortly after DevCon 1924
+and it was sort of a response to like Combi
+and all the other agent frameworks that had come out
+就是, instead of having a library of tools,
+it moved more of an artifact of tools.
+So instead of having a library of security things,
+security vulnerabilities,
+it moved more to a metasploit system
+where there was more of an ecosystem.
+And this really exploded,
+grew the amount of tools that were out there.
+Now, I was working at a company so-and-so
+and I wanted the MCP to, like, Elastic.
+I was working at Elastic
+and I wanted people to be able to use it.
+The agents with Elastic,
+I didn't need to go to Landchain
+and get my Elastic tool included
+in the Landchain repository.
+I could just go and make an MCP server
+and people could deploy this as an artifact in their environment.
+However, when it was released,
+it was originally a HTTP only,
+not even HTTPS.
+It had no auth load
+and no ability to do authentication
+or agent identity
+or anything like that.
+And a lot of the
+vulnerabilities that have come out
+since then have kind of been smoothed down
+to the architecture of the MCP.
+And part of why
+it's being depreciated in the favor of skills
+and a few other things.
+that my favorite agent
+from the early days
+was Voyager.
+It was an agent system
+that had an automatic curriculum.
+So, he built a curriculum of tasks
+that he built.
+He wrote Poe to make a platform
+in a Minecraft world.
+Poe was a JavaScript that
+could interact with a Minecraft library
+that maybe
+used to make blocks.
+That code could error out.
+If you were trying to make a pickaxe
+and it wasn't a pickaxe,
+it would throw an error.
+And when it threw that error,
+it would throw that error back to the agent,
+the host agent,
+and it would pick a different skill.
+Maybe one that created
+and if that threw an error,
+it would then go back to another one
+to make a skill to go to the lines of iron.
+And it would build,
+the code, the agent,
+didn't interact with the MCP server.
+It wrote code,
+wrote skills,
+and managed the library of skills
+to interact with the world.
+And as those skills
+errored out in various situations,
+it added error checking
+and improved them over time.
+This Voyager actually improved
+dramatically over
+for OTGPT
+and others
+which are the baseline here.
+It is, it was a significantly better
+agent and more reliable
+than the other systems.
+And it worked closer to like,
+an agent making
+combi-like agents
+and code,
+than what we're doing now.
+and it's not actually that unusual.
+Because MCP is so inefficient,
+it actually turns out
+it's more efficient
+to write a small piece of code
+to call your MCP servers
+in a loop,
+and then rather take that
+and write a small summary
+and provide that to the host agent.
+It's, you create a system
+you spin up an entire sub-agent,
+that sub-agent spins
+for a few loops to write this code
+and make sure it passes.
+Then, it executes the code,
+takes the outputs
+and shoves it back
+into the original agent.
+And, if you do this,
+you can save up to 80%
+of your tokens
+compared to just calling MCP
+originally.
+So, this to me
+is an extension
+of that Voyager principle
+that was rediscovered
+by people being irritated
+with how MCP works.
+Another agent that people are using
+is called Code.
+It's a terminal nature,
+it works really well,
+but they just kind of gave
+opus and sonnet
+just access to the terminal.
+But, they trained their opus
+and sonnet to be able
+to do terminal costs.
+And, there's enough
+pictorials of these terminals
+so that these agents
+are actually fairly good
+at interacting with this.
+But, one of their ideas
+was to strip out tokens,
+and just have those agents
+navigate the code base itself.
+And, it did very well.
+Open call is, with most,
+it is another,
+it's kind of a derivation.
+To me, it's more of a code agent,
+a coding agent,
+that is mutated
+into a general purpose agent
+by the general purpose agent.
+by the general purpose agent.
+It was i-coded by opus 4.6.
+It uses your shell,
+it has a whole bunch of system prompts in there
+that are kind of terrible.
+Like, in the original system prompts
+of open call in the early days,
+the code base,
+the actual code agent,
+instructs the agent
+to hack the computer it's installed on
+to elevate its privileges.
+because having, not having access to a privilege
+might interfere with the agent's ability
+to do something,
+and it is,
+it has a mode where it's just like,
+you know, again, make sure it happens.
+This, Frank, as Angus pointed out,
+there's over 500 documented CDs.
+This was basically coded by open call,
+and it took the world by storm.
+There's also a talk in a village at that front
+about this,
+so it's going to be very interesting.
+But one of the more interesting agents
+that has come out recently
+is an experimental agent called terminus.
+All this is,
+is like the system prompts that's in there,
+it's very simple,
+you have access to a terminal.
+That's it.
+And they don't,
+there's no, like,
+here's all your tools,
+it's just you have access to a terminal,
+and that's it,
+then we're not going to prompt you more things.
+It is a higher performing,
+right,
+if you compare that harness,
+you compare Opus 4.6,
+or Opus 4.8,
+or Gemini,
+and you just fix your model
+and change the harness between,
+um,
+anti-gravity,
+plot code,
+um,
+open code,
+PI,
+terminus,
+and you compare the performance of the models
+under these different harnesses,
+terminus actually looks really well.
+like this,
+uh,
+it,
+they claim a secondary performer,
+but on many benchmarks,
+it actually outperforms 4 code.
+And it's,
+dead similar.
+This,
+the reason why it can outperform 4 code,
+by,
+is because,
+all Opus,
+and Sonnet,
+and,
+and,
+Gemini,
+and,
+all these codes,
+are trained,
+and are reinforced,
+there are 2B agents,
+already,
+they are deep,
+the agents,
+fronting,
+that we have put into,
+are deeply embedded into,
+the weights of these models,
+you don't need to tell it,
+to be an agent,
+when,
+we can spend,
+gigawatts of,
+you know,
+megawatts of electricity,
+training,
+to be an agent.
+So,
+why open pool,
+work,
+it actually worked a lot better,
+than a lot of the industry,
+but why,
+did it happen,
+in 20,
+and early 20,
+and early 20,
+it's like,
+we've been working on this,
+six years,
+why did that explode?
+So,
+the thing you have to think about,
+is,
+the reinforcement learning,
+we were poorly,
+so,
+models,
+when,
+we started this L11 journey,
+what we did,
+was we grabbed,
+every single token,
+we could get off the internet,
+and then,
+we ran out of tokens,
+text on the internet,
+then we grabbed all the images,
+we could get off the internet,
+for more tokens,
+and then we started doing video,
+audio and stuff,
+this was just,
+a lot of tokens,
+and we trained these models,
+to basically recreate,
+the previous tokens,
+as a pre-training step,
+and then we did a small amount of training,
+afterwards,
+to make it,
+a cap up,
+and make it,
+nice,
+for humans,
+okay,
+but that,
+got cut off,
+because we ran out of tokens,
+the internet ran out of tokens,
+so,
+to keep improving,
+and to keep building,
+products,
+and stuff,
+the next step,
+was actually,
+to do reinforcement loops,
+where you create data for it,
+like a unit test,
+and stuff,
+and,
+you train it,
+to perform,
+well,
+on a certain part,
+so what you do,
+is you say,
+okay,
+here's a code,
+here's the unit test,
+it's failing,
+please make that unit test,
+pass,
+and the agent,
+does the thing,
+that you do,
+on your laptop,
+and then when the unit,
+has passed,
+it changes the ways,
+to make the net list,
+of tokens,
+that it is generally,
+more likely to happen,
+and we do that,
+millions and millions of times,
+and so,
+that,
+um,
+loop,
+inside of these,
+evaluation harnesses,
+why for the code,
+the problem may not be necessary,
+for a while longer,
+when you might just be able to like,
+shove these,
+models,
+with no system prompt,
+into the terminal,
+and it'll work fine,
+however,
+there's a problem with this,
+we're all hacking,
+so we use,
+physics engines,
+and robots,
+to try to get robots,
+to walk,
+and,
+you see these,
+these,
+avatars,
+trying to walk,
+and they're not walking,
+this is because,
+the reward,
+that we're giving it,
+is how far forward,
+it manages to get,
+and so,
+if it walks like a human,
+which is,
+one of the more efficient ways,
+to walk,
+that's,
+okay,
+but if it does this weird,
+like running thing,
+it gets a bit further,
+it can't do that,
+in the real world,
+but the physics engine,
+has some weird bugs,
+and,
+found it,
+and,
+use that mistake,
+have you ever,
+given the agent,
+a task,
+to try to get,
+a right flip feature,
+and it just kind of like,
+doesn't do it,
+or like, hey,
+this test doesn't work,
+and then it deletes the test,
+that's reward hacking,
+and,
+and,
+what happened in,
+2026,
+is,
+Anthropic,
+got a long horizon,
+reportable,
+to work,
+with CTFs,
+and,
+things,
+you can't have,
+you can't have,
+a programming task,
+more easily,
+than you have,
+a CTF task,
+CTF,
+you either have the flag,
+or you don't,
+you can't,
+pack your way around,
+not having the flag,
+if you have a unit test,
+you can delete the test,
+you can do all sorts of things,
+you can mess with it,
+but with the CTFs,
+you can't,
+so,
+Anthropic,
+train a lot of their models,
+on,
+CTFs,
+that we like,
+as the cyberscreen,
+and,
+so,
+was trained on that,
+and,
+Opus 4.6,
+was also trained on that,
+and,
+all code,
+and so,
+Opus 4,
+takes advantage of,
+this reinforcement loop,
+they had,
+but,
+this is a,
+really effective reinforcement loop,
+in the way,
+I want to,
+one day know,
+how,
+Anthropic,
+managed to get,
+their,
+um,
+long horizon loop,
+to work.
+Yeah.
+So,
+what to do about this,
+so,
+promise ejection,
+um,
+the first thing you're going to do,
+is understand that,
+promise ejection is unpatchable,
+it will never go away,
+there's no guardrails,
+the guardrails will not save you,
+if you want to argue about that,
+and think that there's going to be some guardrail,
+um,
+I will happily argue with you,
+uh,
+but,
+you have to build your agent,
+like,
+every single piece of data,
+you either have to build your agent,
+like,
+or code,
+where,
+all the data that goes into code code,
+is my trusted code,
+or my company's trusted code,
+and thus the agent does what I want,
+and,
+I sabotage it by the intent of,
+that's one way to do it,
+but that's an insecure way,
+but works very well for us,
+as a developer community,
+or,
+um,
+you build your agents,
+to have,
+as little,
+as little access to everything as possible,
+so they can't do that much.
+So,
+I think we should all be building,
+a lot of,
+very small agents,
+with other agents,
+in a loop.
+Get a very narrow scope,
+very strict tooling,
+and do not edit the click.
+For example,
+uh,
+Gmail had a,
+uh,
+prompt injection,
+where,
+uh, sorry,
+a prompt injection,
+that allowed people,
+who got people,
+got the Gmail agent,
+to leak,
+uh,
+someone's schedule.
+Well,
+if you're receiving an email,
+it should go to a router,
+that says,
+oh,
+this is awesome,
+through receiving,
+like,
+send it,
+for a meeting schedule,
+send it to the meeting schedule,
+that has the ability to send one email back,
+so it can't export too much data,
+has no access to anything else,
+other than the calendar,
+and it just blocks the data,
+so it doesn't know where you are,
+during the calendar.
+The damage that can do,
+in a prompt injection,
+is much lower,
+than a general purpose agent,
+that has general access to your email,
+has right access,
+and delete access,
+and all that stuff.
+Okay.
+Um,
+and then,
+that is a very full order,
+but if we use agents,
+to make agents like,
+full code,
+basically made open full,
+um,
+you can get a nice separation of concerns,
+and,
+much easier,
+uh,
+it,
+it actually does scale,
+and work very well.
+as well,
+have a,
+make skill,
+like,
+boy bear,
+and you can get some,
+results of what you've done.
+The other thing is,
+it loads,
+drastically lower your cost.
+You don't need,
+the smartest thing in the world,
+you don't need to invoke,
+fail by,
+if there's an answer in an email,
+that could probably be done,
+with Gemini,
+uh,
+with,
+Gemma 3.
+You can save a bunch of money,
+you can just put it up,
+like,
+back up in front of there,
+a number of models,
+locally,
+and I could,
+uh,
+use that instead.
+But,
+anyway,
+um,
+that's,
+all I've got.
+Um,
+if you've got any questions,
+you can go,
+or you can ask,
+um,
+almost,
+we're going to be in the ability room,
+for the afternoon,
+and,
+and,
+up next.
+Right here.
+.
+Yeah.
+Yeah,
+thanks very much for sharing.
+Um,
+I think,
+uh,
+that,
+uh,
+if you have to make one or two,
+that,
+one or two,
+that,
+you know,
+that I think the,
+the biggest trend,
+the,
+the biggest next trend,
+the,
+the,
+the,
+the,
+either a,
+uh,
+uh,
+architecture,
+or a,
+uh,
+a,
+uh,
+ships,
+any kind of approach,
+or,
+uh,
+what would you say?
+Um,
+so,
+is,
+the question,
+what,
+do I think is the next step,
+or,
+yeah?
+.
+Um,
+uh,
+Nemo-tron,
+sorry,
+um,
+Nemo-tool,
+uh,
+um,
+the way they would work with Nemo-tool,
+is they've got a kubernetes cluster running in six gigabytes of ground on the video spark,
+or whatever it is,
+but it's using,
+uh,
+the,
+uh,
+the kubernetes operators,
+uh,
+sorry,
+the NTP servers from it,
+and using them to do,
+uh,
+the controls,
+to make the minimal access possible,
+uh,
+for the,
+uh,
+um,
+that is like a step in the right direction,
+uh,
+but I think,
+um,
+Kubernetes is not scale,
+that literally consumes 16 gigs of RAM to one,
+one,
+one agent on your lap,
+uh,
+on a thing,
+which,
+was used to load containers,
+and multiple copies of the Linux IP,
+uh,
+you know,
+PCP stack,
+uh,
+and it's kind of inefficient,
+um,
+but that,
+move was,
+uh,
+away from,
+like,
+general purpose access and skills and stuff,
+towards a,
+more,
+uh,
+segmented,
+uh,
+controls,
+um,
+and that's what a lot of the,
+more,
+um,
+like,
+that,
+uh,
+uh,
+but they've got,
+uh,
+different,
+uh,
+you know,
+things and like the enterprise products that,
+uh,
+Google makes.
+I have no idea what it may have been a subject,
+uh,
+but I think,
+that like,
+more things that we're going to need,
+like,
+um,
+a federated,
+like,
+cluster or the,
+the thing,
+and no one's building that.
+Um,
+was,
+uh,
+uh,
+uh,
+uh,
+I'm also trying to build that structure.The other thing that people are doing is slapping
+I also think that we can't mold the quality of agents that well.The reinforcement loops are the accuracy of the source.
+Yes, yes.That's good.
+OK,好,那讓我們再掌聲謝謝一下Span.
+好,那我們最後一場是我自己上來
+那在之前的話,我們會先舉行一下我們的畢幕式
+那畢幕式,那畢幕式之後,我們再會上三選
+好,各位轉官,貴賓,媒體朋友以及與惠的好朋友們,大家好
+歡迎各位參與2026 InfoSec Taiwan國際間主持大會
+那這兩天的議程和活動都非常精彩
+而在這個活動的最後,我們將播出這兩天的精彩片段
+Distinguished Officers, Honour Guest, members of the media, and dear friend, good afternoon
+Thank you all for joining us at InfoSec Taiwan 2026
+Over the past two days, we have enjoyed many inspiring sessions and activities
+As we come to the end of the event, we will now present a highlight video featuring some memorable moments from the past two days
+Please enjoy!
+我們現在等一下就會播出我們這兩天的精彩片段
+國際資產主持大會
+國際資產主持大會
+完全是一個由社群驅動的國際性的資產盛事
+我要向大家表達最高的敬人
+也歡迎各位參加這樣的盛會
+今年我們特別以重新定義數位變界
+成為今年大會的一個主題
+我們會面臨到很多,尤其是資產面向的風險
+過去的資產房屋已經不能夠再被全面使用
+反而出現了相當多的時代漏洞
+所以需要全面來重塑
+全面來重塑全面的風險
+完全是一個由社群驅動的國際性的資產盛事
+完全是一個由社群驅動的國際性的資產盛事
+我要向大家表達最高的敬人
+也歡迎各位參加這樣的盛會
+今年我們特別以重新定義數位變界
+成為今年大會的一個主題
+我們會面臨到很多
+尤其是資產面向的風險
+過去的資產房屋已經不能夠再被全面使用
+反而出現了相當多的時代漏洞
+我們要全面來重塑全球的科技架構跟社群性的
+今年也要請很多國際的專家跟學生
+來分享他們同業的動線
+希望能夠改變國內的業者
+更多的消費跟收穫
+資安的威脅沒有國際
+我們深知資安不僅是國安
+也是全球安全的關鍵
+唯有透過國際合作
+行資分享以及跨社群產業的協助
+才能建立一個主動防禦能力的韌性
+跟信任的一個新邊境
+以後這個體育中華世界第14項
+也持續為台灣在數位領域
+做一些緊張性的發聲
+為什麼講說
+個人的個資要保護
+商業的經濟要保護
+國家的安全要保護
+而這三項的保護正在被重新定義
+希望大家能夠定義
+如何保障中華民國台灣
+在這裡每一個國人
+每一個產業
+以及國家安全上
+所需要的資安防禦能力
+好 接下來我們歡迎
+infoset共同創辦人
+Herry
+我們帶來最後的一場
+有印象的
+很濘
+作詞
+養貞
+福
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+大家好,今天這個最後一場逆程,就由我自己上來
+AITPM算是一個我花了將近大概一年的時間去做的一件事情
+起因其實相當的單純
+就是呢,因為我本身在AWAS裡面還有很多其他國際商組織裡面
+在看各不同的這些蘋果貨架或是蘋果方式和方法
+那到最後我自己 derive 出了一個結論
+就是說呢,目前的這個蘋果方式和方法其實有一些根本性的問題存在
+所以我才能在去年開始,我自己開始動手寫這個AITPM
+那AITPM全名的話呢,就是AITRUST BANDWARCHM
+那最主要開始的原因是
+當我們今天在7和6的一個諮詢安全的
+我應該說AI的三案問題的時候
+AI三案問題它並不是一個固定器的東西
+那甚至於說呢,在評估或是在思考這個問題的時候
+那兩個不同的評估人員會有的結論可能也都會不一樣
+那既然它的Foundation上頭是有所謂的這個差異性存在的話
+它到底要怎麼樣才能讓所有人的評估能夠變得自己自信的
+這是一個很大的一個重點
+所以那這其實也是我開始做這個Framework的最大的一個起始點
+那另外一點就是呢,現在目前所有的Framework
+並不是都完全全做給AI所使用的
+那我講一個最簡單的問題點
+就是說呢,我們大家在做資訊安全最了解的就是CDSS
+或者是說很多其他評估的這些架構
+那絕大多數的評估架構呢
+都是配在所謂CDSS這個評估架構上頭
+那並不會說CDSS不好
+但是呢,CDSS通常都是被用來去評估
+對於弱點在單一時間發生的時候的事情
+它本身不是被用來
+其他很多跟AI相關的因素是考慮進去的
+那有一個其實是最明顯的地方就是什麼
+AI是一個問題
+AI的治安問題永遠不會是一樣的
+它跟我們一般在看系統的弱點
+或是說系統裡頭的這些Bug是不同的狀況
+因為它的問題是它會不斷的變動
+它會不斷的變化
+那甚至於說今天碰到的這個問題
+可能明天會變成另外一個型態
+另外一個方式出現
+那除此以外
+比如說像Awa's Top 10
+那Top 10本來就是來做Education
+它並不是一個評估架
+那AI BSS 也是一個評估架
+但是呢,它絕大多數是在指出AI有哪些問題
+而不是說呢
+這個問題怎麼被處理或怎麼被解決
+那這裡頭
+所有這些問題跟所有這些議題
+實際上對我的研究
+並不是一個完整的處理方式的框架
+那
+在業界的其中
+我們也可以看到
+這個問題一直不斷在病領中
+像之前的一個Eco Lake
+就可以在全球市場
+造成將近7000萬美金的一個損傷
+那到底怎麼樣
+讓我們去評估AI的安全
+或怎麼樣去知道AI安全的承受度
+到底有多高
+我覺得就變成一個專業一點
+那AITPM的這個
+DESIGN PRINCIPLE
+其實是基於四件事情上
+第一件事情是
+我不會做所謂的評估
+我們評估的重點和評估的方式
+所有的metrics
+都是照不同的
+就我們所謂的不同的level的rubic
+每個rubic level
+它都有它自己專屬的一個category
+category
+category
+category
+下我們還會在地方加上category
+那裡頭其中有很多部分
+就是我們在這個level裡面
+我們也有造別的favor或map
+其他的favor
+去level其他
+現在目前別人已經有做的
+別人有寫
+那是包含一下
+先前Edward所介紹的AI defense
+我們也要把它運用進去
+所以
+這些evidence
+這些scoring的方式其實都是一樣的
+那第二點是
+我們把這個signal把它keep下來
+那每個不同的這個layer
+我大概介紹一下三個layer
+那
+每個不同的layer
+它最基本的會有一個它的基礎scoring
+那到最後我們才會去找出它的總分
+那
+再來下一個就是
+我們的rubic score
+最重要的是
+我們的rubic score
+永遠不會變成0
+所有人在評估所有的risk的時候
+都會從0到5
+或0到5
+或0到5
+可是我們的rubic score
+永遠不會變成0
+原因很簡單
+沒有一個諮詢安全的這個系統
+是可以定的
+是永遠安全的
+所以
+這個rubic score
+是永遠不會變0的
+那
+所有裡面的context也是非常重要
+所以每一個model
+他們怎麼去被分析
+怎麼被理解
+其實都會在這個裡頭去呈現
+那
+那我在整個framework裡
+其實
+會
+用所謂比較複雜一點的手段
+那複雜一點的手段
+那複雜一點的手段是什麼呢
+我把這整個framework
+breakup
+在三層做評估
+那
+第一層
+IDP
+Interest Valority Profile
+這個是我們傳統的評估方式
+跟傳統的評估方法
+就是我們針對每一個弱點
+每個問題
+每一個match
+每一個rubic
+我們去做評估
+那
+評估完了以後
+那
+我們會在這一層
+我們會單獨的給他一個分數
+然後呢
+再來
+下一層是所謂的ORP
+operational risk option
+就是說今天這個AI系統
+這個AI application
+到了你這個環境
+然後怎麼運作
+它有什麼樣潛在運作中的風險
+所以我們第二層所看的
+第三層也是最特別
+就是assurance confidence index
+那assurance confidence index
+那assurance confidence index裡面呢
+就包含了什麼其他的
+這兩個以外的因素
+比如說我們在講AI本
+OK
+然後我們再講
+所謂的
+其他的這些
+我們要做
+那個account也好
+或者說我們這個
+這個risk confidence
+也好
+全部都會發生
+但裡面很特殊的一件事情
+是我在這裡面包含了
+所謂的時間的改變在裡面
+也就是說呢
+你今天做完一次
+AITP的評估
+那隨著時間的增長
+我裡頭會有一個
+所謂的decay factor
+它會自動的
+把你的分數
+依照時間
+越拉越高
+所以它不會永遠是
+留在同一個點上
+OK
+那最後這三層的這個架構之下
+全部加起來
+以後我在最底層會給你的
+一個所謂的
+Effected Grisks work
+就是你最終的這個成績
+0到10這個成績
+OK
+OK
+好
+那在Layer1的話
+IVP
+到底
+我是什麼去整理
+重新整理它的
+OK
+因為呢
+我覺得現在所有大家
+評估的方法
+很方便說
+我們在Hawas
+看到以後
+或是在CSA
+或Minder
+List
+各不同的評估的 framework
+裡面
+我們所看到的東西
+其實很多東西是重複的
+但是呢
+同時間也有很多東西
+是沒有被注意到的
+所以我們把它
+使用上Break up
+變成五個層次
+第一
+就是所謂的Robustness
+OK
+那Robustness
+就是說今天如果它
+碰到所謂的危險
+跟危險的時候
+它到底該怎麼去處理
+它怎麼樣去
+去把它
+去把它
+完成
+OK
+或者男生的時候
+可以保護它
+如果甚至於說
+今天這個model
+產生model drift
+AI的運動上
+產生drift
+我要整個處理
+碰到poisoning
+我要整個處理
+完全都是以
+不同的角度來看
+這件事情
+OK
+那Fairness
+的話就是說呢
+今天這個東西
+有沒有任何的
+Bias存在
+我們知道現在
+很多外面這種
+落地的模型
+真的很多
+其他模型
+不只是美國在做
+中國也在做
+中國也在做
+OK
+那甚至於說
+有些地方的模型
+做出來以後
+它對於地區性
+是有Bias的
+講個最簡單的例子
+比如說
+你用中國的Deep Sync
+不管是落地的
+或是雲端版的
+你問它
+台灣總統是誰
+它會告訴你說
+台灣總統
+不存在
+台灣並不是一個
+獨立制度
+它並沒有什麼為總統
+這雲端會回答你
+但是
+各位也知道
+我今天是可以
+把這個模型
+導到
+它是承認台灣獨立的
+它是承認台灣的總統
+是賴清的
+這是做得到
+OK
+你用墨定的模型
+你可以隨意的
+搞到它
+承認台灣是獨立的
+台灣總是賴清的
+所以
+這件事情
+就變成說
+你這個東西
+它並不是完全全
+永遠是一定
+或是絕對
+甚至於說
+你今天這個東西
+你Fairness要怎麼樣去不同的
+Ethnical Group
+或者這些
+Ethnic Background的人
+去對待
+或者讓他們是公平的
+OK
+第三個
+Transparency
+OK
+那
+Transparency
+這段環難
+它所有的東西
+它產生的幾個模式
+能夠在Auto裡頭
+去被解釋
+跟解說的
+OK
+然後呢
+再來下一段
+Privacy
+它的Privacy
+Trading Data
+OK
+它所有的這些
+Identification
+PII
+是怎麼產生出來的
+甚至你內部的這些模型
+在訓練的時候
+那你怎麼去使用這些東西
+最後一塊Containment
+OK
+那這個玩意兒
+它是流在盒子裡
+念不動的
+還是它是最外公開的
+它是怎麼去被使用的
+OK
+這也是要被注意另外一段
+那
+Layer 2 ORP
+這一段的話就是呢
+你今天去Dploy
+這個東西的時候
+到底該怎麼要去處理它
+OK
+或者是說
+到底
+這東西過得到
+實際防禁以後
+它的這個分析量是有多高
+所以它的評估方式
+又跟我前面Layer 1
+IEP的評估方式
+又是不同的
+OK
+那
+比頭就包含
+比如說
+你今天
+它所謂的
+Autonomic
+Autonomic
+今天如果是完全讓它
+全自動去保
+比如說
+Agent
+它全控
+通通通之下
+它到底會帶給你多什麼
+實際的風險
+OK
+那再加上
+你今天有這個
+AI application的時候
+比如說
+你對於外公開一個
+Chatbot
+那這個Chatbot
+會帶給你多大的風險
+那
+Cascading Potential
+如果今天這個東西
+被封擊了
+或者被打下
+或者出問題了
+那它帶給你的
+公司又有多少風險
+各種城市的風險
+其實通通都是累積上去的
+OK
+有些時候
+其他的評估方式
+可能就是說
+我這個風險
+這個風險
+處理到一個不一定階段
+處理完就沒了
+甚至消失了
+可是
+對於我們
+它其實不斷被康跑上去的
+OK
+好
+那
+第三段
+其實也是
+我個人覺得最重要的一對
+也是很多
+Framework
+它並沒有談到什麼
+就是所謂的
+Decay
+OK
+那
+這個在ACID裡頭
+就assurance confidence index
+我有特別去把它
+highlight出來
+就是
+所有的評估
+尤其是AI的評估
+AI的系統
+我剛剛前面提了
+它並不是Stand
+它也不是Static
+OK
+它永遠是Dynamic
+它是一直反斷在
+變化會變化
+OK
+那
+所以我在這裡頭去
+所以你有帶一個所謂的Temporal Stake
+那這個Temporal Stake
+它是會把這個
+Evaluation本身的freshness
+會自動的拉長
+OK
+那拉長的時候
+那
+你時間越長
+那它這個scoring就會變得越高
+OK
+那這一點其實在很多地方
+至少它目前為止
+在我自己本身
+看了說
+Safr問有些
+這一點是並沒有做到的
+為什麼呢
+因為很多時候
+很多其他的Famework
+他們在介紹過
+他們在做的時候
+他們指的看那個
+當下所發生的問題
+或者當下所發生的問題
+或者當下發生時間
+過了多久
+這個問題被解決掉
+可是呢
+重點是AI的問題
+它不可能是在一個當下去被解決的
+AI的問題它是一直不斷地在
+以不同的型態
+在同一套系統
+一直不斷重複地在發生
+這跟以前的
+舊的這個弱體系統的概念
+其實有一個很大的差別
+舊的弱體系統的概念是
+這個弱體會出現這個系統
+裡頭一次
+兩次 三次 四次
+可是呢
+它每一次之後
+這個系統有可能會被改變
+或者它的版本也會被翻新
+它會有變化
+可是呢
+在AI的世界裡面
+你可能還是在引用同樣一個模型
+你可能只是在
+retrain語言別動的模型
+它底層的LM的Logic
+還是一模一樣
+它不會變動
+OK
+可是呢
+因為你的retrain data不一樣
+因為你給它的資料
+使用它的方法不一樣
+它會開始變化
+所以這個DKTAC
+對我們自己個人
+也是非常非常的重要
+OK
+所以
+DKFACTOR
+AIBOUND
+還有其他一些
+比較跟時間相關的這些FACTOR
+是我會在ACI INDEX裡
+去把它放進去
+OK
+那
+最重要的一件事情就是呢
+這個所謂的ERS
+所以我這個所謂
+Defectible Scoring
+這一塊
+我的分數
+我剛剛前面講的
+我的分數
+永遠不會歸零
+OK
+因為不會歸零的意義
+其實就是代表說
+今天AI系統
+永遠不可能
+是百分之百的安全
+好
+佳琳哥如果在
+這次Conference
+有跟我聊的話
+我一直會講一句話
+沒有一個AI問題
+是不可能被讓的
+沒有一個高熱系統
+是不可能會被打下來
+沒有一個AI系統
+是不可能會被打下來
+會不會被
+bypass
+只是時間問題而已
+可以
+你要花多少精力
+多少力氣
+下去
+也會打下來
+所以
+ERS
+絕對可能會變成零
+讓我們做生意
+才能知道
+沒有一個希望
+百分之百是可能
+被完完整整的保護住
+所以為什麼
+我會在ERS上
+做這個公布
+刻意不讓它歸零的意義
+就在這裡面
+OK
+OK
+那
+同時間
+我在寫這個Friendware的時候
+實際上去年開始
+這個
+A9這個東西
+開始慢慢的熱鬧起來
+反正去年
+剛開啟的時候
+還是針對
+就是我們在看
+所有的Frontier Model
+或是這些Model Compiler
+或我們自己在做的
+這些Model
+真的上跑為主
+OK
+可是去年
+中旬開始的時候
+因為今天年底
+之後
+Open Cloud 突然爆發開來的時候
+我一看到
+Agentic AI
+這個東西
+開始往上跑
+就開始
+我們應該要再去想想
+Agentic這一段
+要怎麼去做
+所以我們忙碌在Fairware裡頭
+我們去把Agentic的部分
+把Agentic Identity
+和所謂的這個
+Agent他們
+做了活動
+或做了行動以後
+這個Action
+能不能Reversal回去
+這件事情
+我也把它放到
+我們評估項目裡面
+去Cover
+就是說
+在Agent這一段
+如果今天發生過
+或發生過後
+我們能不能把它Reversal
+或者說
+他可能可以
+大概可以
+大概可以
+重來
+這個
+這個
+評估架後
+他本身
+他也可以做到這件事情
+OK
+那
+其實
+我大概在
+接近一個多禮拜
+大概
+兩個禮拜前
+我把這個Fairware放到
+直接開放
+就是
+放出去
+到全世界
+就是
+網站是正式GoLive
+在線上
+然後也有跟
+很多community
+的人在聊
+那其實我最常
+碰到的一個
+就是
+你寫這個東西
+是要跟我們打
+這要跟我們打對台
+這要跟我們互稿
+互稿
+然後其實我跟他們講
+其實我並不是要跟你們
+打對台
+那其實實際上
+我真的要存在
+我們希望能夠去
+複製
+甚至呢
+是讓我們所有的
+真心核實施
+的這些 framework
+可以變更完整
+因為說實話
+到目前為止
+所有的屏幕架構
+屏幕架構
+並沒有一個
+真正的 score
+架構
+可以去做這件事情
+也都包含了比如說
+OAS的AISVS也好
+AIBSS也好
+MITRE也好
+任何的
+很多地方在點的
+都是當
+點在某一個
+弱點上
+它並不是在
+檢視整個
+scoring的架構
+但是scoring出來的
+結果
+也只是
+真正在哪些點上面
+而已
+所以
+AIT面的出現
+並不是要去跟
+其他的強迫群屁
+但是我們
+我希望是能夠
+在業界裡面
+能夠
+還沒有被捕足的地方
+那這裡頭
+其實我也跟所有
+其他的
+而我幾乎都MAP在一塊
+對
+包含AI DEFEND
+包含MITREALYS
+包含NIST
+剛剛前面提的
+那個
+不管是SP800也好
+或者是
+NIST AIR
+MAP
+AISR
+UAI
+等等
+所有這些 framework
+我們全部都有剛剛做MAP
+那我也有做GAP ANALYS
+所以讓它的
+有哪些地方是不足夠
+還不夠的
+OK
+那
+下午有做社群場
+應該就會看到
+比如說
+我在社群場裡面
+其實也有把我們
+現在所看到的一些
+Use case
+跟一些問題
+我們也要把它
+直接拉出來
+然後我們用
+BITDN去化
+社群的分析出來
+OK
+那這個RiskWall
+是從0到10
+10都號是最高
+和0都號是最低
+當然除分到0
+所以如果有效是0的話
+那肯定有8個存在
+那我們知道
+10分是最高
+然後呢
+它的criticality
+然後呢
+它的regression text
+OK
+它regression
+如果現在目前是正常狀態的話
+那它就會屬於
+anchor state
+那如果它漸漸的開始
+tk的話
+那它就可以進到
+所謂的tk state
+裡面去
+OK
+所以呢
+那如果網路上
+我其實用
+把整個AITDN
+這個
+運算的
+那些
+數學的這些方程式
+我把它簡化
+變成一個計算機
+那你可以直接
+就去用
+勾選的話就可以看
+所以
+原則上
+我覺得我自己很
+相信一點
+就是說呢
+我們必須要去
+measure trust
+OK
+不是要去
+不是要去
+不是要去
+過去或去 assert
+這個trust
+OK
+因為trust assertion
+對於我們來講
+其實是很危險的
+因為你是在
+你是在
+你是在
+假設說
+這些東西是安全的
+那你也有
+你的 measurement spec
+的話實際上
+能夠讓
+安全定的
+更完整的
+更安全一些
+所以呢
+這就是為什麼
+我在
+這一點的時間
+會跟
+community 裡面
+不斷在討論
+不斷在溝通
+然後
+看要怎麼樣
+讓這個
+可以變得更好
+那當然現在
+release 影片出來了
+OK
+那也希望
+就是在場
+各位
+我雖然造成英文
+可能很難
+但是我正在
+很努力的
+做一個中文版出來
+因為我整個 framework
+的那個 document
+成立快一百多頁
+OK
+所以有興趣的人的話
+可以去讀一讀
+但我必須說
+我現在中文版
+還沒辦法寫出來
+好
+那
+有任何問題的話
+你歡迎可以在
+linklink上面
+或是說
+在我們那個
+網絡上
+發問題給我
+那網站的話
+是AITBM
+然後我
+那個
+歡迎
+歡迎又把它擋起來
+那
+很簡單就是
+AITBM
+畫機
+OK
+那這個網站
+如果各位有興趣的話
+可以深入看
+那上面也有
+對這個 framework
+有更詳細的解釋
+跟解說
+那
+我今天
+就剛剛好
+4點
+40分
+4點50分
+結束
+OK
+謝謝大家
+謝謝
+謝謝
+謝謝
+謝謝
+結束請
+請
+明年七月見
+OK
+我答應
+平良

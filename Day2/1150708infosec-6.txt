@@ -1,0 +1,429 @@
+我們現在的Session會由Angus來介紹
+Angus也是國外的獎勢之一
+我的前任管理是Angus
+大家就開始歡迎他
+謝謝
+謝謝
+謝謝大家
+我的名字是Angus Chen
+我曾設為 anyone的探知
+之前
+我是傳聞人物
+一點點
+這關詞어를探知
+misin為了午到澱個特別的 defenses
+我便思讀 1980
+了解了更多草值一個蘋果之餘eding
+這個表演的兩照片нолог上感覺有點多
+有什麽在用心影片
+置兩人下去
+if you prefer not to use the QR code, there's a URL right below the QR code.
+请不吝点赞 订阅 转发 转发 打赏支持明镜与点点栏目
+打赏支持明镜与点点栏目
+打赏支持明镜与点点栏目
+打赏支持明镜与点点栏目
+Okay, that's two minutes.
+Again, this session is about AI writes code, who checks it.
+It's really a great pleasure to be back to give a talk on preliminary research that I've been working on,
+with a combination of their experience in the past few months.
+So what's the problem that we're talking about here?
+AI has become a general technology.
+Everybody knows how to use it.
+It's on your phone.
+In the case of AI coding tooling, you can describe your idea in plain English,
+and the tooling, which does the workflow.
+And that causes, well that makes the entire open source software development cycle
+collapse into one operator, like myself.
+I can do everything from build to operations all by myself.
+But what's the problem with that?
+AI coding tool has been writing a million lines of code,
+but nobody's really reviewing it.
+Or maybe you know the security capability of your AI coding tooling,
+but you are not aware of it, or you are not using it.
+So the talk this time is to increase that awareness.
+And even the creator of OpenCloud, Peter himself, says,
+you know, I need to be honest with you.
+I don't really read my code anymore.
+Or I don't really write my code anymore.
+Why does it matter?
+As I was doing my preliminary research, I went to GitHub.
+I just looked up in the GitHub advisory database.
+There are total of 806.
+OpenCloud showed up about 800 times.
+And then I quickly went to visit minor CVE database.
+It shows up 500 times.
+And that's in the time frames of six months.
+So basically there are nearly about 100, 150 reports every month.
+OpenCloud.
+Let's think of a scenario.
+Minor also has this called common witness enumeration.
+So CWE 75 is command injection.
+The formal term is improper neutralization of special elements used in an OS command.
+So the diagram down there gives you an idea of there is a vulnerable script or program.
+And it designs to run this command list, the entire files in your home directory.
+So that dollar sign username can be my name, can be your name, can be anybody's name.
+And here's an attacker infiltrated and modified the code.
+Changed dollar sign username to semi-close delete all files.
+What it does is it violates the three things.
+Competentiality, integrity, and availability.
+And the impact of that in modifying the files and the directives.
+If you look at the code bit on the screen.
+On the left hand side was the vulnerable script that's being generated or being written.
+On the right hand side was the modified code.
+Right around the same time researchers and NYU also published a paper called Asleep at the Keyboards.
+They have done experiments on multiple attack scenarios using co-pilot.
+And in one of the cases is command injection.
+Within command injection there are three types of tests.
+The first test is as the AI right-codes list the files in the folder, the username.
+And there are test2 and test3.
+And test1 was exactly the same as CWE78.
+So this scenario will be, again, you ask AI to write a code to list the entire user folder.
+But AI doesn't know whether this is good code or not in terms of whether there is a vulnerability in the code or not.
+It's not capable of doing that.
+But why are we discussing this now?
+How about let's go back down to the memory lane of coding tools.
+So this is looking, I'm looking at this coming from the data scientist background,
+been using different type of coding tools over time and started in 2015.
+In 2015 there are multiple coding tools.
+For example VS Code, Eclipse, Subline Text.
+All they do is add a new tool.
+It helps you to make write codes more convenient.
+For example, you will highlight the syntax.
+And over time there's another new tool coming out called Node Code,
+being used for robotic process automation.
+You might have heard of TIP Code.
+That's one of the examples.
+And then here comes Andrew Nimes has a course called Python for Machine Learning.
+In the course, it's online.
+You can sign up for the class.
+You can look at the screen.
+On the right hand side is the tutorial.
+It's basically a video of how you do machine learning.
+or how you learn how to do in write code for AI.
+And in the middle is an iPad notebook.
+On the left hand side of the screen is the descriptions of the course.
+The middle part of the screen, the iPad notebook, on the very top,
+So you declare the library.
+You declare it from import from somewhere.
+And then, when I took the class, I noticed that it has the API key right there.
+And right below it, there's a block of code.
+It's described of the LLM model.
+You know, HIGPT3 then.
+So I was out of curiosity.
+So I just changed the model number from 3 to 3.5.
+And the code was running.
+Basically, the program has better performance because I'm using a newer model.
+And then I also noticed how bother me trying to rewrite the code.
+So I copy the code I already have and replace it with the existing code.
+It runs.
+So that's an example of a violation of secret detection, right?
+As you know, there is a secret detection that's available that will check whether the API has been exposed.
+As well as either the model numbers.
+In some practice, you will put in a .in file.
+And some people here may use things you will write .git ignore.
+So we ignore as you push to get out.
+And 2023, around 2024, 2025, at that time, I was helping and MIT was helping to create a course called
+how to ship almost anything with AI.
+That was 2025.
+So right around the time, Andre Caparthi said that the hardest programming language is English.
+So this class was teaching students at MIT how to write codes in a day, you know, build a program in a day using English.
+Here's a group of MIT faculty as well as Harvard postdocs and myself designed this course.
+So the course itself is structured in three parts.
+The first part is about the model.
+The second part is about how to use cursor and wincer.
+And the third part is how can we do that not locally.
+We can do that in the class.
+So we were doing the containers and so forth.
+We thought the modeling part was the hardest part.
+It would take the longest time.
+And the goal of this class was at the end of it, you were able to create an image.
+An image of oceans or a comic strip.
+And the model that we used was a stable diffusion.
+We thought that part, again the model part would take us most of the time.
+It turns out we spend most of the time explaining to the students how to use cursor and wincer.
+And I was wondering why, you know, you go to MIT Harvard.
+Why are you having such a hard time using cursor before using VS Code.
+And then I realized that most of us are used to using Google Chrome, using web browser.
+So you type things in, search for certain things.
+We are not used to prompting.
+We are not used to prompt engineering.
+We are not used to scaffolding.
+But when 2025s come, by then everybody is very comfortable with bi-coding.
+And so this is why, you know, talking about this now,
+everybody is so comfortable with using AI coding agents to write code.
+As I mentioned, there are two things that can be considered to implement at your disposal.
+One is SQL Detection.
+The other is SQL Review.
+What SQL Review does is basically reviewing your code path, your entire architecture,
+or system architecture, and tell you where is the problem.
+So you might be wondering, how fast is this moving now?
+So I went to Star History.
+I don't know if you guys familiar with the website, Star History.
+So it tells you that AI coding assistant is now performing 60% of PR reviews.
+It's out from 20% last year.
+Some people told me today it's doing 80% of PR reviews.
+There are also data that shows AI started to write codes.
+The number one tool they use to write code is Dependabuck.
+About 2.3 million users in Q2 or 2025.
+And where AI builds applications, number one is GitHub Action.
+That's also Q2 2025 information.
+About 5.9 million.
+So we are in this model.
+Build, build, build.
+That's exactly what Javan's paradox, the economist Javan was talking about.
+When the technology is at the maturity.
+For example, you know, like an electric vehicle, right?
+It's at the maturity that everybody can adopt.
+You will see a huge number of users are adopting it and using it.
+And we are also seeing it at the same time.
+We used to call IDE CLI.
+I'm sorry, IDE.
+And now we have this IDE, not just IDE, but IDE first.
+For example, Cursor Winster.
+We also have AI coding agent, IDE assistant co-pilot,
+no code AI builders, and code review agents.
+So we are also seeing this whole different numbers of IDE's or builders
+are basically doing the same thing.
+Although they are slightly different.
+I mean, you may argue that.
+For example, like Vercel replates for front-end development and so forth.
+Another example again, I probably need to minimize this.
+I borrowed from my friend's company.
+He has been building this AI coding platform.
+And in 2025, as you see on the left-hand side,
+this was their architecture diagram.
+You know, it's a VS Code extension with really three layers.
+You have web UI, core services, and API provider layers.
+API providers, you see the three different APIs,
+like open routers that you can select of different models,
+open AI, which is ChatGPT, and cloud from Anthropix.
+That was Q4 2025.
+On Q2 2026, you see the number, the size of the architecture just double or triple.
+I put a question mark there.
+So I was suspecting he's using an AI coding agent to build out his entire AI coding platform.
+But what's missing here?
+We talk about the platform part.
+We talk about the trend.
+And the missing part is the user awareness.
+There are mixed
+misreview of awareness of the security capability
+that covers the AI coding tooling.
+It also has a mixed confidence of what AI coding tools can,
+whether AI coding tools can catch its own mistakes or not.
+And also, users themselves, they are not sure
+whether the security capability is building from third party
+or it's just not there.
+What should we do about this?
+I believe we shouldn't throw the baby out of bathwater.
+Meaning that while you are writing,
+while you are having AI coding tooling to write codes for you,
+we should have some awareness or understanding of certain capabilities
+that either come with it, already come with it,
+or the plugin that you can use.
+So here's our example of it.
+Some of you might have heard called SAS,
+that's a static application security tooling.
+What it does is to use so-called intent analysis,
+and there are two different types of paths.
+One is called source-to-sync,
+the other one is sync-to-source.
+Source-to-sync basically is,
+here's a user input,
+and then the output of it,
+user input which is a command injection,
+the output of it is to delete all files,
+the example that I gave you earlier.
+And if you do source-to-sync,
+it typically takes longer time,
+and if you do the reverse from sync-to-source,
+it takes shorter time.
+And here's another two different type of approach.
+And I forget to mention,
+one other example of SAS,
+one is sync-group,
+probably some of you have used it before,
+because that tool has been around for 20 years.
+What it does is to look for patterns.
+Another tool is called CoQL,
+and what it does is to look for the code itself in the database,
+looking for the vulnerability from the database.
+If we go a little further on the SAS,
+you can also write a rule pack.
+Some people call it a rule packer.
+On the left-hand side is the rule packer,
+that's default.
+If you enter a text input,
+if that,
+for example,
+XSCDE does not exist in that list,
+the scanner's list,
+it will just go right path through it.
+That's the downside of using rule packers by default.
+But what you can do,
+if you are more advanced programmers or users,
+you can create your own customized rule packer
+and add that to your scanner's list.
+So that's one of the three tools that I mentioned that you could use at your disposal.
+And there are another tools that we use.
+It's called self-create composition analysis.
+What it does is to look for CDEs,
+either existing CDE,
+non-CDE,
+as well as CDE that does not exist.
+Basically, it's not there,
+but it's able to identify as a vulnerability.
+In SCA,
+there are three, four levels.
+Most of the product that I know out there are at level one.
+that's basically just looking for what's in the CDE database.
+What I've heard,
+my understanding recently,
+we have this already at the level three.
+So level two is researchability,
+and level three is exploitability.
+There are also products out there,
+it's able to do runtime evidence,
+it's able to detect it in runtime.
+So software composition analysis is also using it to check whether there's a dependency or not.
+Some of you probably have written code in the past 10 or 20 years.
+The dependency is like,
+when you run the code,
+if you go back to think about the iPad or notebook,
+when you run the code,
+it will give you a little screen under it,
+and tells you there's a,
+you need,
+you need this package to update,
+you need that package to update,
+and that's the dependency.
+So in addition to that five tools I just mentioned,
+there are,
+those tools are already covered,
+what we commonly use right now.
+So based on my preliminary research,
+the most popular AI coding tool right now is Cloud Code.
+In this data that I pulled was from last week,
+it's 70%.
+Just of today,
+it's about 75% of users are using Cloud Code.
+So Cloud Code in this case,
+I'm about to give it to you,
+is Cloud Code's CLI,
+you're using a command line.
+And if you take a look at the screen,
+that already comes with SynGrip.
+Within the SynGrip Guardian,
+there are three tools that I mentioned earlier,
+where it's already included,
+for example,
+SaaS,
+security finding,
+basically,
+I'm sorry,
+secret finding,
+the secret detection,
+and supply chain finding,
+for S-bound.
+So in addition to SynGrip Guardian,
+there are also,
+that come with Cloud Code,
+that's security guidance,
+that's already come with Cloud Code.
+and there are also,
+nearly 22,
+uh,
+security clock-in,
+in the marketplace.
+It doesn't take a second to,
+to, uh,
+install the clock-in,
+and while you are having your,
+uh,
+cloud code to write the code for you,
+it will do the checking for you,
+in the real-time.
+So,
+what's the takeaway of this?
+AI is being,
+uh,
+is riding a million lines of code for us.
+Uh,
+many of us have become,
+like,
+solo entrepreneurs,
+or,
+we're,
+we're doing your own business,
+we're running your startup,
+without a security team.
+And,
+uh,
+but,
+AI coding tools,
+that,
+already come with the security capability,
+that,
+they're fine tools,
+that I mentioned earlier.
+And,
+uh,
+you can,
+at your disposal,
+to simply,
+uh,
+add it to,
+uh,
+the tool that they're using.
+Any questions in common?
+Thank you.
+for a while.
+So,
+yeah,
+so,
+his question is,
+what do I think,
+of,
+vertical,
+doing this?
+There are,
+already many,
+tools that are doing this.
+Uh,
+the problem,
+what I've seen,
+uh,
+based on my,
+preliminary research,
+is,
+there are people,
+are not aware of it.
+Mostly,
+the people,
+are thinking,
+now,
+I can,
+uh,
+do it all by myself,
+thinking how to grow,
+but,
+this,
+through the baby,
+out with the,
+bathwater,
+forgetting,
+the security features,
+that come with the coding tool,
+that you,
+uh,
+use it,
+as you are,
+as you are writing your code.
+Any other questions?
+or,
+thank you.
+through thesea.
+Thank you.
+Thank you.
+Awesome.
+Good evening,
+everyone of you...

@@ -1,0 +1,778 @@
+Software engineers or developers?
+Great, really good question.
+What about folks from traditional IT?
+I mean like system engineers, helpdesk installers, engineers or technicians?
+Traditional IT.
+Doesn't matter what you are doing.
+Anyone working on disaster recovery or business continuity?
+No one.
+Auditors or compliance officers?
+What?
+I can't really state.
+You are supposed to see bosses as known as digital makers.
+CISO, CIO, COO, CEO, whatever.
+I know who you guys are.
+Thank you.
+And non-dealers.
+Who didn't raise their hand?
+All right, thank you.
+I have some idea who you are.
+Let me start from the landscape.
+You understand the big picture before we dive in specific details.
+As I helped the EISA, the European Union Agency for Cyber Security,
+develop their threat landscape report every year when I was their expert group member on the subject matter.
+Just two weeks before I took my flight leaving San Francisco for India,
+I arrived here early in the morning yesterday.
+Five cyber security agencies released this statement.
+The AI share in cyber risk.
+Why leaders must act now.
+I am glad to deliver my presentation today here in front of you.
+For my first time in public, just behind closed doors.
+How many of you have read the latest data breach investigation report from Verizon?
+The report this year is based on the analysis of more than 20,000 real incidents.
+Here are the key topics in the report I extracted.
+And three among five key topics are about or related to AI.
+And how does AI move for business?
+Here are the numbers I found in the latest AI and human risk landscape report from Blue Point.
+87% of organizations have AI assistants deployed beyond Taiwan.
+76% are penalty for rolling out autonomous agents.
+And this is kind of red flag, but 42% report a suspicion or confirm AI-related incidents.
+And 94%, this is not a new problem, but 94% are still at least moderately challenging to manage multiple security tools.
+Now, interestingly, while 63% said AI security controls in place,
+52% said not fully confident if their controls can detect a compromised AI.
+So in short, majority have controls in place, while also majority are not fully confident if the control works, really works.
+Another interesting point.
+Talking about the controls, I found something very interesting in the latest global report,
+the future of application security in the era of AI and checkmarks.
+95% recognized they have ever faced pressure to deprioritize or delay reporting controls.
+Again, 95% never faced pressure to deprioritize or delay reporting compliance-related security issues.
+What does this mean?
+No controls can work under such low pressure.
+Everything will fail.
+Are there any auditors or regulators?
+You are right.
+They will be very interested.
+Another interesting one from the same report.
+Those highly matured organizations leading the company.
+Leading the company.
+Those highly matured organizations leading the industry deploy much more non-vulnerable code into their production environment,
+than other less matured organizations.
+Sorry for the time difference.
+Even if you compare the top layer with high maturity,
+comparing to the advanced one just underneath,
+the 42% versus 18%.
+So it was a double.
+And this report also says,
+the more AI-generated code used in production,
+the more vulnerable code gets shipped.
+Another one shows a similar concern.
+The recent AI governance survey from JMM said,
+the more AI is deployed,
+the more incident breaks reported.
+Those deeply AI-integrated into workflows,
+all the way round,
+have more incident breaks than any others with a slightly bigger gap.
+Now, following landscape,
+let's take a look at the instance AI was involved.
+I know what people are interested in performance of GPUs and models.
+But remember,
+AI cannot work without loading a lot of high-quality data.
+This is an instance involving multiple AI models.
+According to Newsworth's reality check in March last year,
+Russian actors have been actively colluding
+or infecting large-language models by LLMs
+with their false claims and propaganda
+to influence the outputs of AI systems.
+The audit found leading AI chatbots
+repeated false narratives
+pushed by Russian browser networks
+about 33% of the time.
+What does this mean?
+If Russians can do that,
+others could do the same.
+I'm not going to say who is honest.
+But you can guess.
+This is a recent incident at Meta,
+a famous company close to my home,
+caused by AI agents.
+Not only AI agents gave inaccurate information
+to the Meta employees,
+but also they exposed data
+to employees not authorized to access it.
+Implications could have been much worse
+if sensitive data had been exposed
+to a wider audience beyond employees.
+To make things worse,
+that AI agent exposed data
+after successful authentication
+and operated inside authorized boundaries
+passing every identity check.
+Here's another one.
+The AI agent ignored
+repeated instructions to stop
+and proceeded to delete
+every mail in the inbox.
+How can we make sure
+AI agent is working as we expect?
+Here's another interesting incident
+at a popular source called Instagram.
+An AI-powered support bar for Meta
+could reportedly provide
+password reset link to someone else
+other than a legitimate account owner
+by submitting a target username
+and attackers control the email address
+instead of the legitimate user's address.
+An attacker could potentially
+receive the reset link
+and to take over the victim's
+Instagram account with relative ease.
+Let me take a few minutes
+to look at what was known
+and reality around Frontier AI,
+the popular topic.
+Whenever I spoke about the AI
+and cybersecurity research,
+especially in smaller,
+closed-door discussions,
+the conversation inevitably turns
+to Frontier AI models,
+particularly cloud meters.
+I'm not going to spend the day
+giving you a workshop on meters today,
+but it's worth taking a few minutes
+to examine what it is
+and why it matters.
+For incident responders,
+having an accurate understanding
+of these systems is essential
+to assessing and responding
+to AI-related issues.
+On April 7, 2026,
+Anthropic released
+three key documents.
+The project address name is
+the system called Cloud Meters Preview.
+And third,
+assessing Cloud Meters Preview
+and cybersecurity capabilities,
+summarize findings
+from its Red Team evaluation.
+Before we go further,
+I'm just curious.
+How many of you have read
+all three documents?
+Great.
+Excellent.
+So you don't have to listen to me.
+Following Anthropic's announcement,
+the comments from National Cyber Director
+and the Treasury Secretary Vincent's
+urgent meeting with
+U.S. financial institutions,
+attention around cloud meters
+intensified rapidly.
+Yet in March that fall,
+I encountered far more discussion
+based on assumptions
+and second-hand reporting
+than on the three foundational documents
+themselves I just mentioned.
+Now, it's three months later.
+We have had insufficient time
+to read the source material.
+Three months.
+Our assessments should be grounded in evidence,
+not speculation.
+So here are three questions I have for you.
+What did you think
+when you heard the Frontier AI saga
+starting missiles back in April 7th?
+Was that a surprise to you?
+If so, what exactly were you surprised at?
+How much did you expect that
+before April 7th, 2026?
+Three questions.
+Three missiles announcement
+should then have been viewed
+as an isolated event.
+Because by March 2026,
+a month before,
+Firefox and Anthropic
+had already announced
+the use of cloud
+for vulnerability discovery.
+And even a month earlier in February,
+Anthropic's Red Team had reported
+that even Opus 4.6
+was identifying more than 500
+500 high-severity vulnerabilities
+in some open-source software
+at a scale not previously seen.
+The signals were already there.
+You can see the big jump
+between January and February.
+Already.
+Organizations that were tracking
+these developments
+had had to assess the implications
+before the missiles announcement on April.
+Those that relied primarily on headlines
+often found themselves reacting to speculation
+instead of focusing on practical steps
+to prepare for the changes ahead.
+Missiles and project blasphemy
+are not the only event.
+Most similar practices were there.
+Microsoft announced
+the use of AI to detect
+more vulnerabilities in men
+for their match.
+And at the same time,
+I don't know what their intention,
+but they said
+the pace and breadth of vulnerability discovery
+are increasing across the software industry,
+and that is unlikely to slow in the near term.
+And they actually did
+a month later in June.
+More than 200 CVEs
+they took care of.
+Unfortunately,
+my premium clients were already prepared.
+More recently,
+in June 20th,
+Adobe announced
+they will apply AI
+to find and fix vulnerabilities,
+and they will release
+the security briefings and advisories
+twice a month,
+rather than once a month,
+starting July 14th.
+Next week,
+be prepared
+if you are using Adobe products.
+Now,
+based on what we just discussed,
+which area will be impacted?
+From a vulnerability management perspective,
+vulnerability research and quality assurance teams
+will be among the most directly impacted
+As the volume and pace
+of discovered vulnerabilities
+continues to increase,
+as detection scales,
+we will likely see an accelerated adoption
+of shift-length practices
+and secure-by-design principles.
+Also,
+I think this transition
+will take time and maturity
+to fully realize.
+Security verification
+will need to become embedded
+into every stage
+of continuous integration
+and continuous deployment pipeline,
+rather than treated
+as a downstream control.
+In short,
+CICD should eventually become CSI,
+CSD,
+as for security.
+We should also expect evolution
+in current responsible disclosure processes
+and workflows
+as the operating environment changes.
+For organizations running bad balances,
+if your companies are running bad balances,
+this is a good moment
+to reassess their structure
+and assumptions
+in light of these changes.
+For example,
+consider what happened
+at the recent 421 event in Berlin.
+The context reached capacity
+and ran out of available software
+before registration had officially closed.
+As a result,
+some researchers
+whose submissions
+were not accepted
+went on to publicly release
+working zero days shortly after.
+Here's a summary of what happened.
+They ran out of context availability
+before registration closed.
+More than 150 researchers rejected,
+including full RCE,
+or Remote Code Execution Change
+of various software,
+including protocols.
+86 AI staff vulnerabilities
+rejected and published
+to vendors and in pubs.
+Scalable AI-assisted
+vulnerability detection.
+This will change
+how current vulnerability
+discovery processes for sure.
+Let me remind you
+that zero days
+expose all users without protections
+until the vendor releases a patch
+to be applied by its users.
+What can we do?
+Here's an interesting article
+with exaggerated title.
+The author says so.
+AI has not made every attacker advanced,
+but it has made low-skill attackers
+far more capable.
+For security teams,
+the answer is net benefit.
+It's sharper vulnerability,
+faster action,
+and a practiced response.
+I agree.
+And I'll add this.
+Current and correct understanding
+of up-to-date risks,
+priorities, threats,
+and situational awareness
+is critical for each of our own organizations.
+As I said earlier
+when talking about
+what happened around Memphis.
+However,
+AI makes everything
+a machine speed,
+more scale,
+and more acceleration.
+Because AI needs
+huge quantities of data to learn.
+More data breaches are expected,
+including PII,
+your intellectual properties,
+and threat signals.
+So what's AI vulnerable to?
+People forget,
+but because AI is also
+a computer system,
+it is vulnerable to all existing
+vulnerabilities and threats
+which our systems,
+networks,
+and services have had for decades.
+For example,
+possible fraudulence
+including unethical use of hands
+was recently reported
+as we have already seen
+on many e-commerce sites
+for over a decade or two.
+AI-specific challenges
+such as problem injection
+and dependence on data
+they have to learn.
+As we have seen
+the data pollution incident by Russia
+at the beginning.
+And AI agents,
+that's another concern as well,
+such as vulnerable MCV deployment
+subject to legacy vulnerabilities
+like this.
+You can just check the red ink.
+The same vulnerabilities
+as many frontline web admins
+have been suffering from
+for over a decade or two.
+What can we do?
+Simple answer.
+It depends.
+It depends on each of your
+different environment,
+circumstances,
+businesses,
+and e-organizational cultures.
+It depends on faster-moving
+dynamic environments than ever.
+Again, as far as again,
+speed, scale, and acceleration.
+I would like to remind you
+that our existing challenges
+before AI still remain.
+We have to keep working on them.
+And we are adding AI
+as another new challenge.
+It can be potentially bigger than ever.
+Five AI agencies more.
+What do we need to do?
+First, we have to detect
+and catch high-risk vulnerabilities
+in our system as quickly as possible.
+About a month ago,
+United States CISA has released
+a new binding operational directive
+focusing on prioritizing
+security updates for its
+transparencies to more.
+Digital identity is again
+in the spotlight to be secured
+with priorities.
+Monitoring and visibility.
+We have to know what's going on,
+when, where in our system
+more than ever.
+Five, I do know,
+I have to admit, I do know,
+this and identity management
+and protection I just mentioned
+are possible biggest challenges
+for many of us.
+End-user awareness.
+End-users can contribute
+to the organization of human sensors.
+Many organizations,
+including even very famous
+security companies group,
+detected incidents by their users,
+not their fancy vulnerabilities.
+In addition to monitoring a system,
+I highly encourage you to monitor
+threats and situations around you globally.
+That gives you more time
+and preparedness,
+as we discussed frontier AI earlier.
+Keep updating your inventory
+incident response plans,
+business continuity plans
+and disaster recovery plans.
+These may need to be updated
+more frequently than ever.
+Exposure and adaptive
+surface monitoring and management
+need to be exposed devices only.
+You have no reason to expose
+everything you have.
+Segmentation,
+systems, subnets, VLANs,
+access points,
+you name it,
+based on your business requirements
+and policies.
+And exercise.
+Thanks to AI with everything
+machine speed,
+scale and acceleration,
+we need more exercise than ever before.
+And routine.
+Some people argue
+AI gives advantage to offenders
+than defendants.
+OK.
+If that's the case,
+why don't we attack ourselves
+as they do to protect ourselves?
+If that really is the case.
+And think again.
+Why do we need AI?
+For example,
+Starbucks recently stopped
+its AI inventory tool
+they deployed
+across North America,
+US and Canada,
+nine months,
+just nine months
+after its deployment,
+because it didn't work
+as they had hoped.
+They made a difficult decision
+to stop using it
+once they found it useless.
+This would reduce their tax service
+and things to be monitored
+and save your money and time.
+Conclusions.
+Oh,great.
+I still have time.
+Thank you for your patience.
+Many of you are very humble.
+Existing vulnerabilities
+and challenges remain,unfortunately.
+Not only that,
+but on top of that,
+AI gears must be scaled
+acceleration.
+To do that,
+there is,however,
+a new hope,
+or reason,
+for some of it,
+I would say.
+If protea AI models
+can uncover vulnerabilities
+we have never found before,
+they can accelerate
+shift-learning practices
+and secure by design
+As I said earlier,
+as some people are arguing,
+if AI is really becoming
+exceptionally good
+at attacking the system,
+why don't we use it
+to attack our own environment first,
+finding and fixing our weaknesses
+before someone else does.
+Here are possible challenges
+I have in mind,
+beyond what we discussed today.
+AI autonomy.
+There were some discussions
+yesterday about
+from automation to autonomy,
+but we have already seen
+an incident by AI agent
+ignoring some comments
+from a user,
+resulting in deletion
+of all emails in the inbox.
+How much are we sure
+not only AI agent
+and AI in the near future
+would listen to us,
+but it could give us
+bigger impact.
+For example,
+Google recently announced
+they moved up their PQC migration
+to 2029.
+And potential bigger challenges,
+humanity and technology.
+Honestly,
+we should have looked at this
+more carefully and thoroughly
+when phishing emerged
+over a decade ago.
+Now,
+we seriously need to look into
+how we can protect humanity
+as Pope Leo XIV
+has recently pointed out
+in his first encyclopedia
+titled,
+Magnificat Humanitas.
+And University of California
+is trying not to
+drain off human skills.
+Why is this important?
+Remember yesterday,
+there were some discussions.
+Only people can do
+what we still have to rely on people.
+But if we need to rely on people,
+we cannot drain off
+their skills,
+capabilities
+of new generations coming
+or even ourselves.
+Before I take your questions,
+let me thank Dr. Ida Tsai very much
+who originally gave me this chance.
+And congratulations
+on your recent promotion
+at your workplace.
+Congratulations, Ida.
+Ken Lee.
+Oh, he's there.
+Thank you very much
+for bringing me all the way
+from Silicon Valley up here
+across the Pacific Ocean.
+Harry, I don't know if he's here,
+but thank you for organizing
+a great program
+including my presentation.
+And last but not least,
+I would like to thank all of you
+who are still standing here
+in front of me
+right before your eyes.
+Now, let me take some questions.
+I know.
+Lunch is waiting for you.
+Thank you, Xinyi-san.
+I have one question.
+We delivered the almost same message
+at the first conference this year.
+Oh, really?
+Sorry, I missed that.
+We observed that AI
+accelerated offensive team-made pieces
+of stress, right?
+And I was wondering
+what's your observation
+and recommendation
+for the defender side?
+What should we do?
+Or what's the best practice
+we should respond to these activities?
+Great question.
+Great question.
+And then following
+our initial presentation,
+in Denver,
+and congratulations.
+And I believe you're...
+Oh, I didn't review your proposal.
+So your proposal must be great.
+This is my honest answer.
+Serious.
+Still, it depends.
+It depends on
+each of our different environment,
+circumstances, businesses,
+and even organizational culture
+unfortunately.
+And to make things more complicated,
+PISA is not the only system.
+There are different kinds
+of each of the response teams
+with different constituencies,
+different missions,
+so that makes things more complicated.
+So if I can generalize
+these things,
+common things are, again,
+how do we detect
+and catch
+as early as possible
+before we really...
+before making everything stop?
+And the digital identity,
+this is really, really
+a concern I have,
+especially the way
+current MCP works
+and modern works,
+how MCP is currently deployed.
+They don't care about
+your security, honestly.
+Challenge me,
+if any MCP deployers.
+And modern,
+that's going to be a challenge.
+But end-users,
+so we have,
+I think we need to get
+end-users more involved,
+make them aware,
+and how we have to revisit,
+how to educate these end-users.
+Because, again,
+even famous security companies,
+they want the serious incident
+by user or soft operator,
+not their fancy, fancy great tools.
+I'm not going to name them,
+but who they are about.
+And threats and situational monitoring.
+Traditionally,
+many organizations,
+they rely on SPLAN
+or PKSR
+or HP Openview
+to monitor,
+pretty much focusing
+on their assets only.
+The whole way.
+No.
+We have to be more careful
+about what's going on.
+Around you.
+Or outside.
+Your organization,
+or globally,
+ideally globally.
+Because,
+let me stop.
+That's my good example,
+but I don't want to mention
+in the public space.
+If you scan,
+like shadow servers are doing,
+you will be surprised
+how many unnecessary devices
+are exposed to the Internet.
+So they are waiting
+for being attacked right now.
+It has nothing to do with AI.
+But things would get worse
+if we leave it as it is.
+And because they expose everything
+to the Internet,
+their network is sad.
+I have never seen
+let me back up.
+I have to say,
+politically correct.
+I'm sorry,
+I'm broke down.
+What's the best way?
+I do not see
+a lot of organizations
+who are doing a great job
+in terms of segmentation.
+In other words,
+some organizations
+are pretty much fully open inside.
+So in other words,
+once they are broken in,
+whatever that is,
+firewall,
+or routers,
+or whatever,
+once somebody gets in,
+they can walk around
+wherever they like.
+And exercise.
+When a serious incident happens,
+many organizations
+have no idea
+what they need to do.
+CEOs are just getting at,
+and otherwise
+they have no idea
+what they have to do.
+So we have to
+practice it.
+So that's again,
+it's a basic,
+very basic practice,
+the pretty much
+C-SERP 101.
+But we are not really
+making a great progress.
+Thank you for your great question.
+好,那謝謝訓長,
+他又重複了一次
+很重要的一些觀點和看法。
+那還沒有什麼問題,
+沒有問題我們要中場休息。
+好,那我們最後一次,
+謝謝訓長帶來的精彩演講。
+謝謝。
+Thank you very much.
+Thank you very much as well.
+The lunch is waiting,
+so ignore myself.
+But I'm staying here today,
+so if you have any further questions,
+just contact me.
+Thank you.
+Thank you.
