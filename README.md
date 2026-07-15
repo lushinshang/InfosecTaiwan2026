@@ -39,7 +39,7 @@ InfosecTaiwan2026/
     ├── image_prompts.md               # 九場資訊圖 prompt 紀錄（桌面/手機各一則）
     ├── InfosecTaiwan2026_Day2.html    # Day2 議程導讀網頁成品
     ├── images/                        # AI 生成資訊圖（每場桌面+手機各一張，共 18 張）
-    ├── 簡報/                          # 講者簡報 PDF（共 9 份，含 3 份主議程與 6 份社群場簡報，後者於 HTML「補充資料」區塊收納）
+    ├── 簡報/                          # 講者簡報 PDF（共 13 份，含 3 份主議程與 10 份社群場簡報，後者於 HTML「補充資料」區塊收納）
     └── whisper_transcriptions/        # 較早一版的原始 whisper 輸出（僅 1~4，內容與現行版不同，保留作原始素材備份，非本專案產出依據）
 ```
 
